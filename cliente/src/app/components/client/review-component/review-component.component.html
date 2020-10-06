@@ -1,0 +1,68 @@
+<div class="detail_screen d-flex flex-column">
+  <div class="d-flex flex-row">
+    <div mat-dialog-title class="detail_header d-flex flex-grow-1 justify-content-start">
+      <span class="title" [class.title300] = "screen300">Añade una reseña</span>
+    </div>
+    <div mat-dialog-title class="detail_header d-flex  justify-content-end">
+      <span class="close_button"><i class="fa fa-times-circle" aria-hidden="true" (click)="closeDialog()"></i></span>
+    </div>
+  </div>
+  <form [formGroup]="commentary">
+    <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row">
+      <div [class.imageDiv300] = "screen300">
+        <img mat-card-image src="{{imagen}}" class="imageProduct" [class.image300] = "screen300" [class.image400] = "screen400">
+      </div>
+      <div class="d-flex flex-column">
+        <div class="d-flex flex-row detail_form_container ratingForm" [class.ratingForm300] = "screen300">
+          <div class="d-flex flex-grow-1 justify-content-start ratingTitle">
+            <span class="obligatory">*</span><span>Calificación General: </span>
+          </div>
+          <div class="d-flex flex-grow-1 justify-content-end">
+            <ngb-rating [(rate)]="currentRate" formNameControl="currentRate" [starTemplate]="t" min ="5" max="5" class="starRating" (hover)="hovered=$event" (leave)="hovered=0"></ngb-rating>
+          </div>
+        </div>
+        <div class="form-group detail_form_container ratingForm" [class.ratingForm300] = "screen300">
+          <span class="obligatory">*</span><label for="titleReview">T&iacute;tulo de la Rese&ntilde;a</label>
+          <input type="text" class="form-control" id="titleReview" formControlName="titleReview" placeholder="Ejemplo: !Fantástico producto">
+        </div>
+        <div class="form-group detail_form_container ratingForm" [class.ratingForm300] = "screen300">
+          <span class="obligatory">*</span><label for="review">Rese&ntilde;a</label>
+          <textarea type="text" class="form-control" id="review" formControlName="review" placeholder="Ejemplo: Compré el producto hace un mes y la experiencia es inigualable"></textarea>
+        </div>
+        <div class="form-group detail_form_container ratingForm " [class.recomendation300] = "screen300">
+          <mat-checkbox formControlName="recomendation" ngDefaultControl ><span *ngIf ="screen300" [class.recomendationLabel300] = "screen300" >¿Recomendar&iacute;a el producto?</span><span *ngIf ="!screen300" [class.recomendationLabel300] = "screen300" >¿Recomendar&iacute;a el producto a un amigo?</span></mat-checkbox>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex flex-row detail_form_container ratingForm"  [class.ratingForm300] = "screen300">
+      <div class="d-flex ratingQuality" [class.ratingQuality300] = "screen300">
+        <span>¿C&oacute;mo relacionar&iacute;a  la calidad/precio de este producto?</span>
+      </div>
+      <div class="d-flex">
+        <ngb-rating [(rate)]="rateQuality" [starTemplate]="t" min ="5" max="5" class="starRating" (hover)="hovered=$event" (leave)="hovered=0"></ngb-rating>
+      </div>
+    </div>
+    <div  class="d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row">
+      <div class="form-group detail_form_container ratingForm flex-grow-1 justify-content-start" [class.ratingForm300] = "screen300">
+        <span class="obligatory">*</span><label for="alias">Alias</label>
+        <input type="text" class="form-control" id="alias" formControlName="alias" placeholder="Ejemplo: Sandri91">
+      </div>
+      <div class="form-group detail_form_container ratingForm flex-grow-1 justify-content-end" [class.ratingForm300] = "screen300">
+        <span class="obligatory">*</span><label for="emailAlias">Email</label>
+        <input type="text" class="form-control" id="emailAlias" formControlName="emailAlias" placeholder="Ejemplo: sandri91@gmail.com">
+      </div>
+    </div>
+    <div mat-dialog-actions class="detail_footer">
+      <div  class="flex-grow-1"></div>
+      <button mat-button class="detail_actionbar_button" (click)="addReview()">Publicar Rese&ntilde;a</button>
+    </div>
+
+  </form>
+</div>
+
+
+<ng-template #t let-fill="fill">
+  <span class="star" [class.star300] = "screen300" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+  </span>
+</ng-template>

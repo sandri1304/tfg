@@ -1,0 +1,27 @@
+<div class="forgetPassword d-flex flex-column">
+  <div class="title">
+    <h3 class="titleForget">¿Olvidaste la contrase&ntilde;a?</h3>
+  </div>
+  <div class="title">
+    <div class="contentForgetPassword d-flex flex-column">
+
+      <p>Si Introduce el email para recuper la contrase&ntilde;a. Se le enviar&aacute; un correo para terminar el proceso de recuperaci&oacute;n</p>
+      <div class="formForget">
+        <form [formGroup]="forgetForm" (ngSubmit)="onSubmit(forgetForm.value)"  >
+          <div class="form-group inputForget">
+            <input type="text"  class="form-control inputText" formControlName="email"  placeholder="Email" (blur)="emailCheck()" [ngStyle] ="obligatoryFieldsEmail" required >
+           
+          </div>
+          <div class="buttonForget">
+            <button type="submit" class="btn btn-primary detail_button" >Recuperar contraseña</button>
+          </div>
+          
+        </form>
+      </div>
+      
+    </div>
+
+  </div>
+  
+</div>
+

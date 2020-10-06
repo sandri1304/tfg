@@ -1,0 +1,82 @@
+<div class="admin-screen-container d-flex flex-column">
+    <p class="titulo">Mensajes</p>
+  
+    <form [formGroup]="filters" class="d-flex filters_container">
+      <div class="filter_div flex-grow-1">
+        <label for="input_code">Nombre Usuario</label>
+        <input type="text" id="input_code" class="form-control" formControlName="name">
+      </div>
+      <div class="filter_div flex-grow-1">
+        <label for="input_code">Correo</label>
+        <input type="text" id="input_code" class="form-control" formControlName="email">
+      </div>
+      <div class="filter_div flex-grow-1">
+        <label for="input_code">Fecha entrada</label>
+        <input type="date" id="input_code" class="form-control" formControlName="fecha">
+      </div>
+      <div class="filter_div flex-grow-1">
+        <label for="input_code">Leido</label>
+        <input type="checkbox" id="input_code" class="form-control" formControlName="read">
+      </div>
+      <div class="filter_div">
+        <label class=""> </label>
+        <button type="button" class="empty_label btn btn-primary btn-block detail_button" (click)="searchFor()"><i class="fa fa-search" style="width: 5%;margin-right: 10px"></i> Buscar</button>
+      </div>
+    </form>
+  
+    <div class="mat-app-background table-container flex-grow-1">
+      <div class="loading" *ngIf="loadingData || errorLoadingData">
+        <mat-spinner *ngIf="loadingData"></mat-spinner>
+        <div class="errorLoading" *ngIf="errorLoadingData">
+          Ups! Algo se ha roto... Vuelve a intentarlo en unos minutos
+          <button type="button" class="empty_label btn btn-primary btn-block" (click)="closeError()">OK</button>
+        </div>
+      </div>
+  
+      <div class="table_delivery_container">
+        <table mat-table [dataSource]="data" matSort>
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Nombre</th>
+            <td mat-cell *matCellDef="let row">{{row.nombreUsuario}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+            <td mat-cell *matCellDef="let row">{{row.correoUsuario}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Fecha Entrada</th>
+            <td mat-cell *matCellDef="let row">{{row.fecha | date:'dd-MM-yyyy' : 'UTC'}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="message">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Mensaje</th>
+            <td mat-cell *matCellDef="let row">{{row.mensaje}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="read">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Leido</th>
+            <td mat-cell *matCellDef="let row">{{row.leido}}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="info">
+            <th mat-header-cell *matHeaderCellDef class="icon_right">
+              <!-- <i matTooltip="Crear Albaran" class="iconheader fa fa-plus-circle" (click)="onAddAlbaran()"></i> -->
+              <i matTooltip="Recagar" class="iconheader fa fa-refresh" (click)="onRefresh()"></i>
+              <i matTooltip="Limpiar filtros" class="iconheader fa fa-times-circle" (click)="onCleanFilters()"></i>
+              <i matTooltip="Exportar en Excel" class="iconheader fa fa-file-excel-o" (click)="onExportExcel()"></i>
+            </th>
+            <td mat-cell *matCellDef="let row" class="icon_right">
+              <i matTooltip="Detalles" class="fa fa-info-circle iconmargin" (click)="onInfoClick(row)"> </i>
+              <i matTooltip="Eliminar" class="fa fa-times" (click)="onRemoveMessage(row)"></i>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <mat-paginator [length]="resultsLength" [pageSizeOptions]="[10, 25, 50]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>

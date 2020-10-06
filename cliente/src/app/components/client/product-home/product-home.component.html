@@ -1,0 +1,11 @@
+<div *ngFor="let p of front" class="home">
+  <ng-container *ngIf="templateFront" [ngTemplateOutlet]="templateFront"
+      [ngTemplateOutletContext]="{dataFront: p}"></ng-container>
+</div>
+
+<ng-template #templateFront let-data="dataFront">
+  <app-product-row class="d-flex flex-row" [front]="data"></app-product-row>
+</ng-template>
+
+
+

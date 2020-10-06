@@ -1,0 +1,223 @@
+<div class="btn-group d-flex flex-grow-1 divCategories" *ngIf="isSmallScreen4">
+  <button class="dropdown-toggle button-default" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
+  <div class="dropdown-menu categoriasDropDown">
+    <div class ="d-flex flex-column">
+      <a class="btn btn-link font-color-navAdmin" routerLink="largeAppliances">Gran Electrodom&eacute;stico</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="smallKitchenAppliances">Pequeño Electrodom&eacute;stico de cocina</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="image">Imagen</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="sound">Sonido</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="telephony">Telefon&iacute;a y electr&oacute;nica</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="personalCare">Cuidado Personal</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="computing">Inform&aacute;tica</a>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row categories"style=" padding:0px 20px;" *ngIf="!isSmallScreen4">
+  <div #largeAppliances id="largeAppliances" [class.selectedLink] = "classLarge" *ngIf="!classLarge">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/largeAppliances">Gran Electrodom&eacute;stico</a>
+  </div>
+  <div #kitchenAppliances id="kitchenAppliances" [class.selectedLink] = "classSmall" *ngIf="!classSmall">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/smallKitchenAppliances">Pequeño Electrodom&eacute;stico de
+      cocina</a>
+  </div>
+  <div #image id="image" [class.selectedLink] = "classImage" *ngIf="!classImage">
+    <!--<button class="btn btn-link font-color-navAdmin" type="button"   aria-expanded="true" aria-controls="collapseCatalogue" (click)="toggle('catalogue')">Imagen</button>-->
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/image">Imagen</a>
+  </div>
+  <div #sound id="sound" [class.selectedLink] = "classSound" *ngIf="!classSound">
+    <!--<button class="btn btn-link font-color-navAdmin" type="button"   aria-expanded="true" aria-controls="collapseClienteService" (click)="toggle('sclient')">Sonido</button>-->
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/sound">Sonido</a>
+  </div>
+  <div #telephony id="telephony" [class.selectedLink] = "classTelephony" *ngIf="!classTelephony">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/telephony">Telefon&iacute;a y electr&oacute;nica</a>
+  </div>
+  <div #personalCare id="personalCare" [class.selectedLink] = "classPersonalCare" *ngIf="!classPersonalCare">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/personalCare">Cuidado Personal</a>
+  </div>
+  <div #cleaning id="cleaning" [class.selectedLink] = "classCleaning" *ngIf="!classCleaning">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/cleaning">Limpieza</a>
+  </div>
+  <div #computing id="computing" [class.selectedLink] = "classComputing" *ngIf="!classComputing">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/computing">Inform&aacute;tica</a>
+  </div>
+</div>
+
+
+
+<div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column detailHome">
+  <div class="d-flex flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row product" >
+    <div class="productPhoto">
+      <img src="{{imagen}}" class="imageProduct" (click)="openPhoto()">
+    </div>
+    <div class="contentDetailProduct">
+      <div class="contentBrand d-flex flex-row">
+        <div class="brand  flex-grow-1 justify-content-start">
+          <img src="{{imagenBrand}}" class="imageBrand">
+        </div>
+        <div class="offerPoster d-flex flex-grow-1 justify-content-end"  *ngIf="offer">
+          <div class="posterOffer d-flex justify-content-center">
+            <span>Oferta</span>
+          </div>
+
+        </div>
+      </div>
+      <div class="title"  #title  id="title"  [class.paddingClass]="!offer">
+        <div class="nameProduct">
+          <span>{{product.modelo}}</span>
+        </div>
+        <div>
+          <ngb-rating [rate]="currentRate" [starTemplate]="t" [readonly]="true" min ="5" max="5" class="starRating"></ngb-rating>
+          <span class="opinions">{{notes }} {{opinions}}</span>
+          <span class="review" (click)="addReview()"> | Escriba una reseña</span>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="d-flex flex-row shipping">
+          <div class="shippingConstant">
+            <span>Env&iacute;o: </span>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div *ngIf="freeShipping" class="free d-flex flex-grow-1 justify-content-center" >
+              <span>Envio Gratuito<i class="fa fa-truck" aria-hidden="true"></i></span>
+            </div>
+            <div *ngIf="!freeShipping" class="notFree">
+              <span>Desde 5,25€</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-row availability">
+          <div class="availabilityConstant">
+            <span>Disponibilidad: </span>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div *ngIf="stock" [ngStyle]="stockStyle" class="d-flex flex-grow-1 justify-content-center stock" >
+              <span>Rec&iacute;belo en casa en dos días. Plazo de entrega estimado</span>
+            </div>
+            <div *ngIf="!stock" class="notStock">
+              <span>No disponible en estos momentos.</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-row promotions" *ngIf="offer">
+          <div class="promotionConstant">
+            <span>Promociones: </span>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="d-flex flex-grow-1 justify-content-center promotionDescription" >
+              <span>{{promotion}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex flex-row  price">
+          <div class="pvpDiv flex-row flex-grow-1 justify-content-start">
+            <span *ngIf="offer" class="reducePVP">{{reducePVP}}€ </span>
+            <span [class.previousPVP]="offer" [class.pvp]="!offer">{{product.pvp}}€ </span>
+            <span *ngIf="offer" class="OfferPercentage">{{product.ofertas.descuento}}%</span>
+          </div>
+          <div class="buttonCart flex-grow-1 justify-content-end">
+            <button mat-button class="shoppingCart" (click)="buyProduct()">Comprar<i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="tabsPage">
+   <mat-tab-group class="tabs labelTabs">
+      <mat-tab label="Caracteristicas" class="contentTab" >
+        <div #caracteristicas id ="caracteristicas" class="contentFeature"></div>
+      </mat-tab>
+      <mat-tab label="Reseñas" class="contentFeature">
+        <div class="contentFeature" [class.d-flex] ="!isSmallScreen2">
+          <div class="d-flex flex-column justify-content-start progressBarItems">
+            <p class="titleInfoGeneral">Seleccione una fila para filtrar reseñas</p>
+            <div class="d-flex flex-row progressBar" [class.selectedDiv]="filter5" (click)="filterReviews(5)">
+              <span class="marginGeneral">5</span>
+              <span class="marginGeneral"> &#9733;</span>
+              <mat-progress-bar mode="determinate" value="{{count5Star}}" class="marginGeneral"></mat-progress-bar>
+              <span>{{count5Star}}</span>
+            </div>
+            <div class="d-flex flex-row progressBar" [class.selectedDiv]="filter4" (click)="filterReviews(4)">
+              <span class="marginGeneral">4 </span>
+              <span class="marginGeneral"> &#9733;</span>
+              <mat-progress-bar mode="determinate" value="{{count4Star}}" class="marginGeneral"></mat-progress-bar>
+              <span>{{count4Star}}</span>
+            </div>
+            <div class="d-flex flex-row progressBar" [class.selectedDiv]="filter3" (click)="filterReviews(3)">
+              <span  class="marginGeneral">3 </span>
+              <span class="marginGeneral"> &#9733;</span>
+              <mat-progress-bar mode="determinate" value="{{count3Star}}" class="marginGeneral"></mat-progress-bar>
+              <span>{{count3Star}}</span>
+            </div>
+            <div class="d-flex flex-row progressBar" [class.selectedDiv]="filter2" (click)="filterReviews(2)">
+              <span class="marginGeneral">2  </span>
+              <span  class="marginGeneral"> &#9733;</span>
+              <mat-progress-bar mode="determinate" value="{{count2Star}}"  class="marginGeneral"></mat-progress-bar>
+              <span>{{count2Star}}</span>
+            </div>
+            <div class="d-flex flex-row progressBar" [class.selectedDiv]="filter1"  (click)="filterReviews(1)">
+              <span class="marginGeneral">1 </span>
+              <span class="marginGeneral"> &#9733;</span>
+              <mat-progress-bar mode="determinate" value="{{count1Star}}" class="marginGeneral"></mat-progress-bar>
+              <span>{{count1Star}}</span>
+            </div>
+            <button type="button" class="empty_label btn btn-primary btn-block detail_Button" (click)="cleanFilters()">Limpiar filtros</button>
+          </div>
+          <div class="d-flex flex-column progressBarItems">
+            <p class="titleInfoGeneral">Calificaciones promedio del cliente</p>
+            <div class="d-flex flex-column">
+              <div  class="d-flex flex-row starClassReview">
+                <span>Calificación General: </span>
+                <ngb-rating [rate]="currentRate" [starTemplate]="t" [readonly]="true" min ="5" max="5" class="starRating"></ngb-rating>
+              </div>
+              <div class="d-flex flex-row starClassReview">
+                <span>Calidad/Precio del  producto:</span>
+                <mat-progress-bar mode="determinate" value="{{countPrice}}"></mat-progress-bar>
+              </div>
+            </div>
+          </div>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="d-flex flex-column grid" *ngFor="let review of reviews">
+          <div class="d-flex flex-column flex-sm-column flex-md-row flex-lg-row rowStyles">
+            <div class="d-flex flex-column justify-content-start contentDiv">
+              <span class="titleReview">{{review.titulo}}</span>
+              <span class="aliasReview">{{review.alias}}</span>
+              <div class="d-flex flex-row priceReview">
+                <span>Votaci&oacute;n general:</span>
+                <ngb-rating [rate]="review.calificacionGeneral" [starTemplate]="t" [readonly]="true" min ="5" max="5" class="starReview"></ngb-rating>
+              </div>
+              <div class="d-flex flex-row priceReview progressBarReview">
+                <span>Calidad/Precio del  producto:</span>
+                <mat-progress-bar mode="determinate" value="{{review.calidadPrecio}}"></mat-progress-bar>
+              </div>
+            </div>
+            <div  class="contentReview">
+              <div class ="pReviewDiv">
+                <p class="pReview">{{review.comentario}}</p>
+              </div>
+              <div class="form-check checkReview" *ngIf="review.recomendacion">
+                <input type="checkbox" class="form-check-input" id="materialChecked2" checked >
+                <label class="form-check-label" for="materialChecked2">Se lo recomendar&iacute;a a un amigo</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  <div *ngIf="categoria != ''">
+    <app-product-row [front]="related"></app-product-row>
+  </div>
+
+</div>
+
+
+
+<ng-template #t let-fill="fill">
+  <span class="star" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+  </span>
+</ng-template>

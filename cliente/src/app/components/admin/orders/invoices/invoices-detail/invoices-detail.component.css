@@ -1,0 +1,156 @@
+/*main container */
+
+.detail_screen {
+  margin: -24px;
+  height: 100%;
+}
+
+/*header*/
+
+.detail_header {
+  background-color: #224E8F;
+  color: white;
+  padding-left: 10px;
+}
+
+.close_button {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/* container */
+
+.detail_container {
+  padding: 15px;
+}
+
+.detail_form_container {
+  margin-bottom: 2px;
+}
+
+.detail_form_label {
+  width: 100px;
+}
+
+.detail_form_input {
+  width: 250px;
+}
+
+#input_invoice {
+  margin-right: 2em;
+  width: 20%;
+}
+
+#input_date {
+  margin-right: 2em;
+  width: 25%
+}
+
+#input_cliente {
+  width: 50%
+}
+
+.detail_button {
+  background-color: white;
+  padding-left: 3px;
+  padding-right: 3px;
+  min-width: 48px;
+  font-size: larger;
+}
+
+.table-container {
+  box-shadow: 8px 8px 25px grey;
+  background-color: whitesmoke;
+  margin-top: 15px;
+}
+
+
+.table_delivery_container {
+  max-height: 300px;
+  height: 300px;
+  overflow: auto;
+}
+
+.mat-header-cell {
+  font-weight: bold !important;
+  color: black;
+  font-size: 1.1em;
+  background-color: whitesmoke;
+}
+
+.iconmargin {
+  margin-right: 10px;
+  color: black;
+  font-size: 1.2em;
+}
+
+.iconheader {
+  margin-right: 10px;
+  font-size: 1em;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-column-codigo, .mat-column-articulo, .mat-column-marca, .mat-column-modelo, .mat-column-precio, .mat-column-actions {
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 20% !important;
+  width: 20% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.total {
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  font-size: 1em;
+  height: 45px;
+  padding: 10px 24px 0px;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorLoading {
+  color: #980000;
+  max-width: 360px;
+  text-align: center;
+}
+
+/*footer*/
+
+.detail_footer {
+  background-color: #224E8F;
+  color: white;
+  padding: 0 10px;
+}
+
+.mat-dialog-title {
+  margin: 0;
+}
+
+.mat-dialog-actions {
+  margin-bottom: -48px;
+}
+
+.detail_actionbar_button {
+  background-color: #1E457E;
+}

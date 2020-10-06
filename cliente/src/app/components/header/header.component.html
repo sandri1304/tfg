@@ -1,0 +1,39 @@
+
+
+
+<nav id="header_navbar" #headerNav class="navbar navbar-expand-lg fixed-top navbar-light base-color" (window:resize)="onResize($event)">
+
+  <a class="navbar-brand" href="/home">
+    <img src="../assets/logo.png" alt="Nevado" class="logo" (load)="onResize($event)" >
+  </a>
+  <button id = "header_navbar_dropdown_button" #headerNavbarDropdownButton class="navbar-toggler" type="button"  aria-controls="header_navbar_dropdown_list"
+    aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed = !isCollapsed" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="header_navbar_dropdown_list" [collapse]="isCollapsed" #headerNavbarDropdownList>
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-link" *ngIf="userService.isLogged() && userService.isAdmin()"><i class="fa fa-cart-arrow-down"></i>{{countOrders}}
+      </li>
+      <li class="nav-item" *ngIf="userService.isLogged() && !userService.isAdmin()">
+          <a class="nav-link" routerLink={{url}} (click)="isCollapsed = true"><span class="fa fa-user"></span>{{username}}</a>
+      </li>
+      <li class="nav-item" *ngIf="!userService.isAdmin() && userService.isLogged()">
+        <a class="nav-link" routerLink="{{urlOrders}}" (click)="isCollapsed = true"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Pedidos</a>
+      </li>
+      <li class="nav-item" *ngIf="!userService.isAdmin()">
+        <a class="nav-link" routerLink="/home/cart" (click)="isCollapsed = true"><i class="fa fa-shopping-cart" aria-hidden="true"></i>{{productsCart}}</a>
+      </li>
+      <!-- <li class="nav-item" *ngIf="!userService.isLogged()">
+        <a class="nav-link" routerLink="/register" (click)="isCollapsed = true"><span class="glyphicon glyphicon-user"></span>Registrarse</a>
+      </li> -->
+      <li class="nav-item" *ngIf="!userService.isLogged()">
+        <a class="nav-link" routerLink="/login" (click)="isCollapsed = true"><span class="fa fa-sign-in"></span>Entrar</a>
+      </li>
+      <li class="nav-item" *ngIf="userService.isLogged()">
+        <a class="nav-link" routerLink="/logout" (click)="isCollapsed = true"><span class="fa fa-power-off"></span>Salir</a>
+      </li>
+    </ul>
+  </div>
+
+</nav>

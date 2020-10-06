@@ -1,0 +1,148 @@
+.detail_header {
+  width:100%;
+  background-color: #1E457E;
+  color: white;
+  padding:0.5em 0.75em;
+  margin-right: -1.20em;
+  margin-left: -1.25em;
+  margin-top: -1.25em
+}
+
+.title{
+  font-size: 1.75em;
+  font-weight: bold;
+  font-family: personalizado, Geneva, sans-serif;
+}
+
+.imageProduct {
+  max-width: 22em;
+  min-width: 22em;
+  min-height: 20em;
+  max-height: 20em;
+}
+
+.starRating {
+  display: inline-block;
+  text-align: center;
+  margin-left: 0.25em;
+
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 2.65em;
+  color: #d3d3d3;
+}
+
+.full {
+  color: #1E457E;
+}
+
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: #1E457E;
+}
+
+.ratingTitle {
+  display: flex;
+  align-items: center;
+}
+
+.ratingForm {
+  margin-bottom:1em;
+  margin-left: 1.51em;
+  margin-right: 1.5em;
+  font-weight: bold;
+}
+
+.checkBoxFriends {
+  margin-left: 0.25em;
+
+}
+
+.labelCheckBox {
+  margin-left: 1em;
+}
+
+.ratingQuality {
+  display:  flex;
+  align-items: center;
+}
+
+.detail_footer {
+  background-color: #224E8F;
+  color: white;
+  padding: 0 10px;
+  margin: 0;
+}
+
+.mat-dialog-title {
+   margin-bottom: 1.45em;
+}
+
+.mat-dialog-actions {
+  margin-bottom: -2em;
+  margin-left: -1.50em;
+  margin-right: -1.50em;
+}
+
+.detail_actionbar_button {
+  margin: 0;
+  background-color: #1E457E;
+}
+
+/*pantalla 300px*/
+.title300 {
+    font-size: 0.95em;
+
+}
+
+.imageDiv300{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image300 {
+  max-width: 12em;
+  min-width: 12em;
+  min-height: 8em;
+  max-height: 8em;
+}
+
+.ratingForm300 {
+  margin-bottom:0.55em;
+  margin-left: -0.55em;
+  margin-right: 0.25em;
+  font-weight: bold;
+}
+
+.star300 {
+  font-size: 1em;
+}
+
+.recomendation300{
+  margin-left: -0.55em;
+}
+
+.recomendationLabel300{
+  width:3em;
+  font-size:0.85em !important;
+}
+
+.ratingQuality300{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*pantalla 300px*/
+.image400 {
+  max-width: 23em;
+  min-width: 23em;
+  min-height: 18em;
+  max-height: 18em;
+}

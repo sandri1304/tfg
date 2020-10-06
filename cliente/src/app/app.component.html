@@ -1,0 +1,5 @@
+<app-header #myheader (marginContainer)="getMargin($event)" ></app-header>
+<div class="flex-grow-1" [ngStyle]="containerStyle" >
+  <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

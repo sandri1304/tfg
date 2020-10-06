@@ -1,0 +1,30 @@
+<mat-card class="example-card">
+  <mat-card-header class="headerCard">
+    <div class="free" *ngIf="freeSend">
+      <span  class="freeSendShipping" >Env&iacute;o gratuito</span>
+    </div>
+    <div class="imageHeader">
+      <img mat-card-image src="{{imagen}}" class="imageProduct" (click)="goToDetailProduct()">
+    </div>
+  </mat-card-header>
+  <mat-card-content>
+      <div class="titleCard" (click)="goToDetailProduct()">
+        <span>{{dataProduct.marca}} </span><span>{{dataProduct.modelo}}</span>
+      </div>
+      <div class="pvpCard">
+        <span *ngIf="oferta" class="reducePVP">{{reducePVP}}€ </span>
+        <span [ngStyle] ="previousPVP">{{dataProduct.pvp}}€ </span>
+        <span *ngIf="oferta" class="OfferPercentage">{{dataProduct.ofertas.descuento}}%</span>
+      </div>
+      <ngb-rating [rate]="currentRate" [starTemplate]="t" [readonly]="true" min ="5" max="5" class="starRating"></ngb-rating>
+      <mat-card-actions class="buttonCart">
+        <button mat-button class="shoppingCart" (click)="buyProduct()">Comprar<i class="fa fa-shopping-cart" aria-hidden="true"></i></button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>
+
+<ng-template #t let-fill="fill">
+  <span class="star" [class.full]="fill === 100">
+    <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+  </span>
+</ng-template>

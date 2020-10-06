@@ -1,0 +1,13 @@
+a {
+    color: #224E8F;
+}
+
+
+#copyRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #224E8F;
+    margin-top: 0.5em;
+}

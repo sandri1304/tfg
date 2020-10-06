@@ -1,0 +1,76 @@
+<div class="detail_screen d-flex flex-column">
+  <div mat-dialog-title class="detail_header d-flex">
+    <span class="flex-grow-1"><h3>Ficha del cliente</h3></span>
+    <span class="close_button"><i class="fa fa-times-circle" aria-hidden="true" (click)="closeDialog()"></i></span>
+  </div>
+
+  <div class="detail_container d-flex flex-column flex-grow-1">
+    <form [formGroup]="client">
+      <div class="d-flex flex-row detail_form_container input_info_client">
+        <mat-form-field appearance="fill" class="input_info_client" id="name">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre"  readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input_info_client" id="subname">
+          <mat-label>Apellidos</mat-label>
+          <input matInput formControlName="apellidos" readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="d-flex flex-row detail_form_container">
+        <mat-form-field appearance="fill" class="input_info_client" id="dni">
+          <mat-label>DNI</mat-label>
+          <input matInput formControlName="dni" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input_info_client" id="birthday">
+          <mat-label>Fecha Nacimiento</mat-label>
+          <input matInput formControlName="fechaNacimiento" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input_info_client" id="phone">
+          <mat-label>Tel&eacute;fono</mat-label>
+          <input matInput formControlName="telefono" readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="d-flex flex-row detail_form_container">
+        <mat-form-field appearance="fill"  class="input_info_client" id ="email">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="correo" readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="d-flex flex-row detail_form_container">
+
+      </div>
+
+      <div class="d-flex flex-row detail_form_container">
+        <mat-form-field appearance="fill" class="input_info_client" id ="addressS">
+          <mat-label>Direcci&oacute;n Env&iacute;o</mat-label>
+          <input matInput formControlName="direccionEnvio" readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="d-flex flex-row detail_form_container">
+        <mat-form-field appearance="fill" class="input_info_client" id ="addressF">
+          <mat-label>Direcci&oacute;n Factura</mat-label>
+          <input matInput formControlName="direccionFactura" readonly>
+        </mat-form-field>
+      </div>
+
+      <div class="d-flex flex-row detail_form_container">
+        <mat-form-field appearance="fill" class="input_info_client" id ="orders">
+          <mat-label>Nº de Pedidos</mat-label>
+          <input matInput formControlName="pedidos" >
+        </mat-form-field>
+      </div>
+      <div mat-dialog-actions class="detail_footer">
+        <div  class="flex-grow-1"></div>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+</div>

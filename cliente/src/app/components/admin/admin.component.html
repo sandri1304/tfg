@@ -1,0 +1,39 @@
+<div class = "adminContainer d-flex flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row">
+  <nav  class = "d-flex flex-row flex-sm-row flex-md-column flex-lg-column flex-xl-column justify-content-between justify-content-md-start base-color-navAdmin">
+    <div>
+        <a class="btn btn-link font-color-navAdmin" routerLink="clients"><i class="fa fa-users" aria-hidden="true" style="margin-right: 1em;"></i>Clientes</a>
+    </div>
+    <div class="accordion" #accordionOrders id="accordionOrders">
+      <button class="btn btn-link font-color-navAdmin" type="button"  aria-expanded="true" aria-controls="collapseOrders" (click)="toggle('orders')"><i class="fa fa-cart-arrow-down" style="margin-right: 1em;"></i>Pedidos</button>
+      <div id="collapseOrders" class="collapse" #collapseOrders data-parent="#accordionOrders" [collapse]="isCollapsed[0]">
+          <a class="dropdown-item font-color-navAdmin" routerLink="orders"><i class="fa fa-cart-arrow-down" style="margin-right: 1em;"></i>Pedidos</a>
+          <a class="dropdown-item font-color-navAdmin" routerLink="invoices"><i class="fa fa-files-o" aria-hidden="true" style="margin-right: 1em;"></i>Facturas</a>
+      </div>
+    </div>
+    <div class="accordion" #accordionCatalogue id="accordionCatalogue">
+      <button class="btn btn-link font-color-navAdmin" type="button"   aria-expanded="true" aria-controls="collapseCatalogue" (click)="toggle('catalogue')" id = "catalogue"><i class="fa fa-book" aria-hidden="true" style="margin-right: 1em;" ></i>Cat&aacute;logo</button>
+      <div id="collapseCatalogue" class="collapse" #collapseCatalogue data-parent="#accordionCatalogue" [collapse]="isCollapsed[1]">
+        <a class="dropdown-item font-color-navAdmin" routerLink="products"><i class="fa fa-cubes" aria-hidden="true" style="margin-right: 1em;"></i>Productos</a>
+        <a class="dropdown-item font-color-navAdmin d-flex flex-row" routerLink="brandsCategories">
+          <div><i class="fa fa-television" aria-hidden="true" style="margin-right: 1em;"></i></div>
+          <div> Marcas y<br> Categor&iacute;as</div>
+
+        </a>
+        <a class="dropdown-item font-color-navAdmin" routerLink="offers"><i class="fa fa-eur" aria-hidden="true" style="margin-right: 1em;"></i>Ofertas</a>
+      </div>
+    </div>
+    <div class="accordion" #accordionClientService id="accordionClientService">
+       <button class="btn btn-link font-color-navAdmin" type="button"  routerLink="customerService" aria-expanded="true" aria-controls="collapseClienteService"><i class="fa fa-cog" aria-hidden="true" style="margin-right: 1em;"></i>Servicios</button>
+
+    </div>
+    <div>
+      <a class="btn btn-link font-color-navAdmin" routerLink="import"><i class="fa fa-cloud-upload" aria-hidden="true" style="margin-right: 1em"></i>Importación</a>
+    </div>
+    <div>
+      <a class="btn btn-link font-color-navAdmin" routerLink="messages"><i class="fa fa-envelope-o" aria-hidden="true" style="margin-right: 1em"></i>Mensajes</a>
+    </div>
+  </nav>
+  <div class="flex-grow-1">
+    <router-outlet></router-outlet>
+  </div>
+</div>

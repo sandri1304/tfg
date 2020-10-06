@@ -1,0 +1,693 @@
+.containerCart{
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.title {
+  margin: 1.25em 1em;
+  padding: 0.55em;
+  color: #1E457E;
+  font-family: personalizado, Geneva, sans-serif;
+  font-weight: bold;
+  background-color: rgb(235,205,210);
+}
+
+.contentProductCart{
+  margin-left: 1.75em;
+  margin-right: 1.75em;
+  background-color:  white;
+}
+
+.headerCart {
+  padding: 0.55em;
+  font-size: 1.25em;
+  font-weight: bold;
+  background-color: #1E457E;
+  color: white;
+  display: flex;
+  align-items: center;
+
+}
+.pvpTitle {
+  padding: 0 1.5em;
+}
+
+.totalHeader {
+  padding: 0 1.5em;
+}
+
+.units {
+  padding:0 2.5em;
+}
+
+.typeSend {
+  padding: 0 2.5em;
+}
+
+.imageProduct {
+  max-width: 8em;
+  min-width: 8em;
+  max-height: 6em;
+  min-height: 6em;
+}
+.brandModel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  padding: 0.55em
+}
+
+.model {
+  display: flex;
+  align-items: center;
+}
+
+.pvp {
+  display: flex;
+  align-items: center;
+  font-size: 1.55em;
+  font-weight: bold;
+}
+
+.numProductsDiv {
+  display: flex;
+  align-items: center;
+}
+
+.ckeckbox {
+  padding:1em;
+  display: flex;
+  text-align: center;
+}
+
+.checkboxButton {
+  display: flex;
+  align-items: center;
+}
+
+.detail_actionbar_button {
+  width: 25%;
+  height: 39%;
+  border-radius: 2px;
+}
+
+.numProductInput {
+  width: 45.5%;
+  text-align: center;
+}
+
+.buttonRemove {
+  display: flex;
+  align-items: center;
+  padding-left: 10em;
+}
+
+.total{
+  margin-left: 1.75em;
+  margin-right: 1.75em;
+  background-color:  white;
+  padding: 1em;
+  margin-top: 1.55em;
+
+}
+
+.totalTitle {
+  font-size:2.5em;
+  font-weight: bold;
+}
+
+.pvpTotal {
+  font-size:2.5em;
+  font-weight: bold;
+  padding-right: 1.55em;
+}
+
+.mat-divider {
+  display: block;
+  margin: 0;
+  border-top-width: 3px;
+  border-top-style: solid;
+}
+
+.buttons {
+  padding: 1em;
+}
+
+.detail_action {
+  padding: 0.55em;
+}
+
+.detail_action:hover  {
+  background-color: rgb(186,186,188);
+  font-weight: bold;
+}
+
+.buttonProcess {
+  margin: 1em 1.75em;
+}
+
+.proccessOrderButton {
+  background-color:  #1E457E;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25em;
+  font-size: 2em;
+}
+
+.proccessOrderButton:hover {
+  background-color: rgb(166,187,210);
+  color:  #1E457E;
+  cursor: pointer;
+}
+
+.imageProduct2 {
+  max-width: 18em;
+  min-width: 18em;
+  max-height: 14em;
+  min-height: 14em;
+}
+
+.contentClass {
+  padding: 0 1em;
+}
+
+.contentClass2 {
+  padding: 0 1em;
+}
+
+.brandModel2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.25em;
+  padding-top: 0.55em;
+}
+
+.brand2 {
+  display: flex;
+  align-items: center;
+  /* padding: 0.55em */
+}
+
+.model2 {
+  display: flex;
+  align-items: center;
+}
+
+.pvp2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.55em;
+  font-weight: bold;
+  padding-left: 6em;
+}
+
+.numProductsDiv2 {
+  display: flex;
+  align-items: center;
+}
+
+.ckeckbox2 {
+  /* padding:1em; */
+  display: flex;
+  text-align: center;
+  /* font-size: 1.25em; */
+}
+
+.checkboxButton2 {
+  display: flex;
+  align-items: center;
+}
+
+.detail_actionbar_button2 {
+  width: 10%;
+  height: 37%;
+  border-radius: 2px;
+  font-size: 1em;
+}
+
+
+.numProductInput2 {
+  width: 45%;
+  text-align: center;
+}
+
+.buttonRemove2 {
+  display: flex;
+  align-items: center;
+  padding-left: 17.5em;
+}
+
+@media only screen and (max-width: 1280px) {
+  .numProductInput{
+    width: 45.5%;
+  }
+
+  .numProductsDiv{
+    padding: 0 2.55em;
+  }
+
+  .brand {
+    font-size: 1em;
+  }
+
+  .model {
+    font-size: 1em;
+  }
+
+  .typeSend{
+    padding: 0 3.5em;
+  }
+
+  .sendOnline {
+    padding: 0 2.5em;
+  }
+
+  .buttonRemove {
+    padding-left: 12em;
+  }
+
+}
+
+
+@media only screen and (max-width: 1048px) {
+  .buttonRemove {
+    padding-left: 10.5em;
+  }
+
+  .numProductInput{
+    width: 70.5%;
+  }
+
+  .brand {
+    font-size: 0.75em;
+  }
+
+  .model {
+    font-size: 0.75em;
+  }
+
+  .pvp {
+    font-size: 1em;
+  }
+
+  .ckeckbox {
+    font-size: 0.75em;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .buttonRemove {
+    padding-left: 9em;
+  }
+
+  .numProductInput{
+    width: 75.5%;
+    font-size: 0.75em;
+  }
+
+  .brand {
+    font-size: 0.75em;
+  }
+
+  .model {
+    font-size: 0.75em;
+  }
+
+  .pvp {
+    font-size: 1em;
+  }
+
+  .ckeckbox {
+    font-size: 0.75em;
+  }
+
+  .detail_actionbar_button {
+    width: 25%;
+    height: 35%;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 0.75em;
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  .buttonRemove {
+    padding-left: 9em;
+  }
+
+  .numProductInput{
+    width: 100%;
+    font-size: 0.55em;
+  }
+
+  .brand {
+    font-size: 0.75em;
+  }
+
+  .model {
+    font-size: 0.75em;
+  }
+
+  .pvp {
+    font-size: 1em;
+  }
+
+  .ckeckbox {
+    font-size: 0.75em;
+  }
+
+  .detail_actionbar_button {
+    width: 25%;
+    height: 30%;
+    border-radius: 2px;
+    text-align: center;
+    font-size: 0.55em;
+  }
+}
+
+@media only screen and (max-width: 854px) {
+  .pvp2 {
+    padding-left: 4em;
+  }
+  .buttonRemove2 {
+    padding-left: 10.5em;
+  }
+}
+
+@media only screen and (max-width: 823px) {
+  .pvp2 {
+    padding-left: 4em;
+  }
+  .buttonRemove2 {
+    padding-left: 15.5em;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .detail_actionbar_button2 {
+    width: 15%;
+    height: 100%;
+    border-radius: 2px;
+    font-size: 1em;
+  }
+
+  .imageProduct2 {
+    max-width: 14em;
+    min-width: 14em;
+    max-height: 10em;
+    min-height: 10em;
+  }
+
+  .model2 {
+    padding-bottom: 0.55em;
+  }
+
+  .sendOnline2 {
+    padding-top: 0.55em;
+  }
+
+  .buttonRemove2 {
+    padding-left: 15.5em;
+  }
+
+}
+
+@media only screen and (max-width: 731px) {
+  .pvp2 {
+    padding-left: 3.25em;
+  }
+};
+
+@media only screen and (max-width: 667px) {
+
+  .imageProduct2 {
+    max-width: 12em;
+    min-width: 12em;
+    max-height: 9em;
+    min-height: 9em;
+  }
+
+  .pvp2 {
+    padding-right: 0em;
+    font-size: 1.25em;
+  }
+
+  .buttonRemove2 {
+    padding-left: 12.5em;
+  }
+
+  .numProductInput2 {
+    width: 30%;
+    text-align: center;
+  }
+
+  .model2 {
+    font-size: 0.75em;
+  }
+
+  .brand2  {
+    font-size: 0.75em;
+  }
+
+  .ckeckbox2 {
+    font-size: 0.75em;
+  }
+};
+
+@media only screen and (max-width: 568px) {
+
+  .productPhoto2 {
+    display: flex;
+    align-items: center;
+  }
+
+  .imageProduct2 {
+    max-width: 8em;
+    min-width: 8em;
+    max-height: 7em;
+    min-height: 7em;
+  }
+
+  .pvp2 {
+    padding-right: 4em;
+    font-size: 0.75em;
+  }
+
+  .buttonRemove2 {
+    padding-left: 0em;
+  }
+
+  .numProductInput2 {
+    width: 27%;
+    text-align: center;
+  }
+
+  .model2 {
+    font-size: 0.65em;
+  }
+
+  .brand2  {
+    font-size: 0.65em;
+  }
+
+  .ckeckbox2 {
+    font-size: 0.65em;
+  }
+};
+
+
+@media only screen and (max-width: 441px) {
+
+  .contentClass2 {
+    padding: 0 0.25em;
+  }
+
+  .imageProduct2 {
+    max-width: 6em;
+    min-width: 6em;
+    max-height: 7em;
+    min-height: 7em;
+  }
+
+  .pvp2 {
+    padding-right: 2em;
+    font-size: 1em;
+  }
+
+  .buttonRemove2 {
+    padding-left: 6.5em;
+  }
+
+  .numProductInput2 {
+    width: 30%;
+    text-align: center;
+  }
+
+  .model2 {
+    font-size: 0.75em;
+  }
+
+  .brand2  {
+    font-size: 0.75em;
+  }
+
+  .ckeckbox2 {
+    font-size: 0.75em;
+  }
+
+  .totalTitle {
+    font-size: 2em;
+    padding-right: 1.55em;
+  }
+
+  .pvpTotal {
+    font-size: 2em;
+  }
+};
+
+
+@media only screen and (max-width: 375px) {
+
+  .contentClass2 {
+    padding: 0 0.20em;
+  }
+
+  .imageProduct2 {
+    max-width: 5em;
+    min-width: 5em;
+    max-height: 7em;
+    min-height: 7em;
+  }
+
+  .pvp2 {
+    font-size: 1em;
+  }
+
+  .buttonRemove2 {
+    padding-left: 6.5em;
+  }
+
+  .numProductInput2 {
+    width: 37%;
+    text-align: center;
+    font-size: 0.75em;
+  }
+
+  .model2 {
+    font-size: 0.60em;
+  }
+
+  .brand2  {
+    font-size: 0.60em;
+  }
+
+  .ckeckbox2 {
+    font-size: 0.65em;
+  }
+
+  .totalTitle {
+    font-size: 2em;
+    padding-right: 1em;
+  }
+
+  .pvpTotal {
+    font-size: 2em;
+  }
+
+  .detail_actionbar_button2 {
+    width: 17%;
+    height: 100%;
+    border-radius: 2px;
+    font-size: 1em;
+  }
+
+  .contentProductCart{
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .total {
+    margin-left: 1em;
+    margin-right: 1em;
+
+  }
+}
+
+@media only screen and (max-width: 375px) {
+
+  .contentClass2 {
+    padding: 0 0.20em;
+  }
+
+  .imageProduct2 {
+    max-width: 5em;
+    min-width: 5em;
+    max-height: 7em;
+    min-height: 7em;
+  }
+
+  .pvp2 {
+    font-size: 0.75em;
+  }
+
+  .buttonRemove2 {
+    padding-left: 4.5em;
+  }
+
+  .numProductInput2 {
+    width: 37%;
+    text-align: center;
+    font-size: 0.75em;
+  }
+
+  .model2 {
+    font-size: 0.55em;
+  }
+
+  .brand2  {
+    font-size: 0.55em;
+  }
+
+  .ckeckbox2 {
+    font-size: 0.55em;
+  }
+
+  .totalTitle {
+    font-size: 2em;
+    padding-right: 0.75em;
+  }
+
+  .pvpTotal {
+    font-size: 2em;
+  }
+
+  .detail_actionbar_button2 {
+    width: 17%;
+    height: 100%;
+    border-radius: 2px;
+    font-size: 1em;
+  }
+
+  .contentProductCart{
+    margin-left: 0.75em;
+    margin-right: 0.75em;
+  }
+
+  .total {
+    margin-left: 0.55em;
+    margin-right: 0.55em;
+
+  }
+
+  .title{
+    margin: 1.25em 0.55em;
+  }
+}

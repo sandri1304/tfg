@@ -1,0 +1,13 @@
+<div class="detail_screen d-flex flex-column">
+  <div mat-dialog-title class="detail_header d-flex">
+    <span class="flex-grow-1"></span>
+    <span class="close_button"><i class="fa fa-times-circle" aria-hidden="true" (click)="closeDialog()"></i></span>
+  </div>
+  <div>
+    <p style="text-align: center">¿Seguro que deseas eliminar la empresa de transporte seleccionada?</p>
+  </div>
+  <div class="btn-group">
+    <button type="button" class="detail_button" style= "margin-right: 1em" (click)="removeTransport()">S&iacute;</button>
+    <button type="button" class="detail_button" (click)="closeDialog()">No</button>
+  </div>
+</div>

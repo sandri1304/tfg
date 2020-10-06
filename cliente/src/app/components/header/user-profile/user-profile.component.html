@@ -1,0 +1,136 @@
+<div class="userProfile">
+  <div class="title">
+    <h3>
+      Introduce tus datos personales
+    </h3>
+  </div>
+  <form [formGroup]="profileForm" id="userForm" (ngSubmit)="onSubmit(profileForm.value)">
+    <div class="d-flex flex-column personalData">
+      <div class ="form-group d-flex flex-row">
+        <label class="labelInput">Nombre <span class="obligatory">*</span></label>
+        <input #alex type="text" class="form-control inputData" id="nameUser" formControlName="nameUser" name="nameUser"/>
+      </div>
+
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">Apellidos <span class="obligatory">*</span></label>
+        <input type="text"  class="form-control inputData" id="subname" formControlName="subname" name="subname"/>
+      </div>
+
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">Email</label>
+        <input   type="text" class="form-control inputData" id="emailId" formControlName="email" placeholder="Email" name="email"/>
+      </div>
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">Teléfono <span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="phone" formControlName="phone" name="phone">
+      </div>
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">NIF/NIE <span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="dni" formControlName="dni" name="dni"/>
+      </div>
+
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">Fecha de Nacimiento <span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="birthday" formControlName="birthday" name="birthday">
+      </div>
+      <p> Nota: Es importante introducir el n&uacute;mero de tel&eacute;no m&oacute;vil para facilitar que la empresa de transporte se ponga en contacto con usted y as&iacute; garantizar la entrega en la fecha y direcci&oacute;n establecida.</p>
+    </div>
+
+    <div class="personalData d-flex flex-column">
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput" >Direcci&oacute;n<span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="billingStreet" formControlName="billingStreet" name="billingStreet">
+      </div>
+
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">C&oacute;digo Postal <span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="billingPostalCode"  formControlName="billingPostalCode" name="billingPostalCode">
+      </div>
+
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">Poblaci&oacute;n <span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="billingTown"  formControlName="billingTown" name="billingTown">
+      </div>
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">Provincia <span class="obligatory">*</span></label>
+        <select class="form-control inputData" formControlName="province" id="province" name="province">
+          <option selected>Seleccione Provincia</option>
+          <option value="Ávila">Ávila</option>
+          <option value="Guadalajara">Guadalajara</option>
+          <option value="Madrid">Madrid</option>
+          <option value="Segovia">Segovia</option>
+          <option value="Toledo">Toledo</option>
+        </select>
+      </div>
+
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">Pa&iacute;s <span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="country" formControlName="country" name="country" value="España">
+      </div>
+
+      <div class="form-group form-check">
+        <mat-checkbox class="checkboxButton2" [(ngModel)]="sendAddress" formControlName="sendAddress" ngDefaultControl >¿Desea utilizar otra dirección para el envío?</mat-checkbox>
+      </div>
+    </div>
+
+    <div *ngIf ="sendAddress" class="personalData d-flex flex-column">
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput" >Direcci&oacute;n<span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="street" formControlName="street" name="street">
+      </div>
+
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">C&oacute;digo Postal <span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="postalCode2"  formControlName="postalCode2" name="postalCode2">
+      </div>
+
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">Poblaci&oacute;n <span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="sendTown"  formControlName="sendTown" name="sendTown">
+      </div>
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">Provincia <span class="obligatory">*</span></label>
+        <select class="form-control inputData" formControlName="sendProvince" id="sendProvince" name="sendProvince">
+          <option selected>Seleccione Provincia</option>
+          <option value="Ávila">Ávila</option>
+          <option value="Guadalajara">Guadalajara</option>
+          <option value="Madrid">Madrid</option>
+          <option value="Segovia">Segovia</option>
+          <option value="Toledo">Toledo</option>
+        </select>
+      </div>
+
+      <div class="form-group d-flex flex-row">
+        <label class="labelInput">Pa&iacute;s <span class="obligatory">*</span></label>
+        <input type="text" class="form-control inputData" id="country" formControlName="country" name="country" value="España">
+      </div>
+    </div>
+    <div *ngIf="!showButtonCart">
+      <div class="d-flex flex-row buttons">
+        <div class="d-flex justify-content-start flex-grow-1">
+          <button id="comeBack" type="button" class="btn btn-primary default_button" (click)="comeBack()" style="margin-left: 1em;">Volver</button>
+        </div>
+        <div class="d-flex justify-content-end flex-grow-1">
+          <button type="submit" class="btn btn-primary default_button">Guardar</button>
+        </div>
+      </div>
+
+
+    </div>
+    <div *ngIf="showButtonCart">
+      <div class="d-flex flex-row buttons">
+
+        <div class="d-flex justify-content-start flex-grow-1">
+          <button id="comeBack" type="button" class="btn btn-primary default_button" (click)="comeBackCart()" style="margin-left: 1em;">Volver</button>
+        </div>
+
+        <div class="d-flex justify-content-end flex-grow-1">
+          <button type="submit" class="btn btn-primary default_button">Continuar Pedido</button>
+        </div>
+      </div>
+
+    </div>
+
+  </form>
+</div>
+

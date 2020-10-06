@@ -1,0 +1,59 @@
+.homeCategory{
+  background-color: whitesmoke;
+  margin-top:-1em;
+  width: 100%;
+}
+
+.rowStyles{
+  height: 14em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid {
+  margin: 0 2em;
+}
+
+
+.title {
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1E457E;
+  font-family: personalizado, Geneva, sans-serif;
+  margin: 1em 0;
+}
+
+.fontTitle {
+  font-size: 3em;
+}
+
+a{
+  margin-top: 1em;
+  /* color: #1E457E !important; */
+  font-weight: bold !important;
+} 
+
+.button-default {
+  width:100%;
+  
+  background-color: #1E457E;
+  color: white;
+  /* font-size: 1.25em; */
+  /* display:flex;
+  align-items: flex-start; */
+  border: 0px;
+}
+
+
+@media only screen and (max-width: 694px) {
+  [class*="fontTitle"] {
+    font-size: 2em;
+  }
+
+  [class*="rowStyles"] {
+    height: 14em;
+  }
+}

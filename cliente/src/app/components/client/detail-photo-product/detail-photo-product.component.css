@@ -1,0 +1,11 @@
+.close_button {
+  margin-right: 1.5em;
+  cursor: pointer;
+}
+
+.imageProduct {
+  max-width: 45em;
+  min-width: 45em;
+  min-height: 30.5em;
+  max-height: 30.5em;
+}

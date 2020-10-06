@@ -1,0 +1,584 @@
+.example-card {
+  min-width: 16.58rem;
+  max-width: 16.58rem;
+  min-width: 16.58em;
+  max-width: 16.58em;
+  min-height: 20.12em;
+  max-height: 20.12em;
+  margin:1em;
+  box-shadow: 5px #1E457E;
+}
+
+.headerCard {
+  width: 100%;
+  
+}
+
+::ng-deep .mat-card-header-text {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.imageHeader{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  padding-top: 0.35em;
+  cursor: pointer;
+}
+
+.imageProduct {
+  
+  min-width: 6.5em;
+  
+  
+  max-width: 6.5em;
+  background-size: cover;
+}
+
+.titleCard {
+  width: 100%;
+  color: black;
+  font-size: 1.25rem;
+  font-size: 1.15em;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-bottom: 0.35em;
+  min-width: 3em;
+  max-height: 3em;
+  cursor: pointer;
+}
+
+.pvpCard{
+  width: 100%;
+  color: black;
+  font-size: 2.5rem;
+  font-size: 2.5em;
+  justify-content: center;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.OfferPercentage {
+  background-color: rgb(200,101,123);
+  color: whitesmoke;
+  font-size: 0.5rem;
+  font-size: 0.5em;
+  margin-left: 0.25rem;
+  margin-left: 0.25em;
+  padding: 0.25rem;
+  padding: 0.25em;
+  border: 2px solid rgb(200,101,123);
+  border-radius: 10px;
+}
+.free{
+  width:100%;
+  position: absolute;
+  float: left;
+  z-index: 10;
+}
+
+.freeSendShipping {
+  background-color:rgb(176, 205, 179);
+  border: 2px solid rgb(176, 205, 179);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #1E457E;
+  padding: 0.15rem;
+  padding: 0.15em;
+  font-size: 0.65rem;
+  font-size: 0.65em;
+}
+
+.buttonCart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin:0 !important;
+}
+
+.shoppingCart{
+  width: 100%;
+  background-color: rgb(193,48,70);
+  color: white;
+  font-size: 1.5rem;
+  font-size: 1.5em;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.fa-shopping-cart{
+  padding-left: 0.25rem;
+  padding-left: 0.25em;
+  padding-right: 0.25rem;
+  padding-right: 0.25em;
+}
+
+.starRating {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+  font-size: 1.25rem;
+  font-size: 1.25em;
+  color: #d3d3d3;
+}
+
+.full {
+  color: #1E457E;
+}
+
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: #1E457E;
+}
+
+@media only screen and (max-width: 1920px) {
+  [class*="example-card"] {
+    min-width: 15.58rem;
+    max-width: 15.58rem;
+    min-width: 15.58em;
+    max-width: 15.58em;
+    min-height: 20.12em;
+    max-height: 20.12em;
+    margin:0.75em;
+  }
+
+  [class*="titleCard"] {
+    font-size: 1.25rem;
+    font-size: 1.15em;
+    margin-bottom: 0.5rem;
+    margin-bottom: 0.5em;
+    min-width: 3em;
+    max-height: 3em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 2.5rem;
+    font-size: 2.5em;
+  }
+
+  .shoppingCart{
+    font-size: 1.5rem;
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 1680px) {
+  [class*="example-card"] {
+    min-width: 14.58rem;
+    max-width: 14.58rem;
+    min-width: 14.58em;
+    max-width: 14.58em;
+    min-height: 19.12em;
+    max-height: 19.12em;
+    margin:1em;
+  }
+
+  [class*="titleCard"] {
+    font-size: 1rem;
+    font-size: 1em;
+    margin-bottom: 0.35rem;
+    margin-bottom: 0.35em;
+    min-height: 2.9em;
+    max-height: 2.9em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 2rem;
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  [class*="example-card"] {
+    min-width: 14rem;
+    max-width: 14rem;
+    min-width: 14em;
+    max-width: 14em;
+    min-height: 19.12em;
+    max-height: 19.12em;
+    margin:1em;
+  }
+
+  [class*="titleCard"] {
+    font-size: 1rem;
+    font-size: 1em;
+    margin-bottom: 0.35rem;
+    margin-bottom: 0.35em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 2rem;
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 1536px) {
+  [class*="example-card"] {
+    min-width: 13.58rem;
+    max-width: 13.58rem;
+    min-width: 13.58em;
+    max-width: 13.58em;
+    min-height: 20.12em;
+    max-height: 20.12em;
+    margin:1em;
+  }
+
+  [class*="titleCard"] {
+    font-size: 1rem;
+    font-size: 1em;
+    margin-bottom: 0.5rem;
+    margin-bottom: 0.5em;
+    min-width: 3em;
+    max-height: 3em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 1.55rem;
+    font-size: 1.55em;
+  }
+
+  /* .shoppingCart{
+    font-size: 1.5rem;
+    font-size: 1.5em;
+  } */
+}
+
+@media only screen and (max-width: 1440px) {
+  [class*="example-card"] {
+    min-width: 13rem;
+    max-width: 13rem;
+    min-width: 13em;
+    max-width: 13em;
+    min-height: 17.5em;
+    max-height: 17.5em;
+    margin:0.85em;
+  }
+
+  [class*="titleCard"] {
+    font-size: 0.75rem;
+    font-size: 0.75em;
+    margin-bottom: 0.35rem;
+    margin-bottom: 0.35em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 1.55rem;
+    font-size: 1.55em;
+  }
+}
+
+@media only screen and (max-width: 1368px) {
+  [class*="example-card"] {
+    min-width: 11.5rem;
+    max-width: 11.5rem;
+    min-width: 11.5em;
+    max-width: 11.5em;
+    min-height: 17.5em;
+    max-height: 17.5em;
+    margin:0.65em;
+  }
+
+  [class*="titleCard"] {
+    font-size: 0.75rem;
+    font-size: 0.75em;
+    margin-bottom: 0.35rem;
+    margin-bottom: 0.35em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 1.55rem;
+    font-size: 1.55em;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  [class*="example-card"] {
+    min-width: 11rem;
+    max-width: 11rem;
+    min-width: 11em;
+    max-width: 11em;
+    min-height: 17.15em;
+    max-height: 17.15em;
+    margin:0.25em;
+  }
+
+  [class*="titleCard"] {
+    font-size: 0.75rem;
+    font-size: 0.75em;
+    margin-bottom: 0.35rem;
+    margin-bottom: 0.15em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 1.35rem;
+    font-size: 1.35em;
+  }
+}
+
+@media only screen and (max-width: 1080px) {
+  [class*="example-card"] {
+    min-width: 10rem;
+    max-width: 10rem;
+    min-width: 9.5em;
+    max-width: 9.5em;
+    min-height: 16.50em;
+    max-height: 16.50em;
+    margin:0.55em;
+  }
+
+  [class*="titleCard"] {
+    font-size: 0.65rem;
+    font-size: 0.65em;
+    margin-bottom: 0.35rem;
+    margin-bottom: 0em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 1.25rem;
+    font-size: 1.25em;
+  }
+
+  [class*="imageHeader"]{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-top: 0.05em;
+    cursor: pointer;
+  }
+
+  .shoppingCart{
+    width: 100%;
+    background-color: rgb(193,48,70);
+    color: white;
+    
+    font-size: 0.85em;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  [class*="example-card"] {
+    min-width: 9em;
+    max-width: 9em;
+    min-height: 16.12em;
+    max-height: 16.12em;
+    margin:0.45em;
+  }
+
+  [class*="imageHeader"]{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-top: 0.15em;
+    cursor: pointer;
+  }
+
+  [class*="titleCard"] {
+    font-size: 0.65rem;
+    font-size: 0.65em;
+    margin-bottom: 0.35rem;
+    margin-bottom: 0em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 1.05rem;
+    font-size: 1.05em;
+  }
+
+  .shoppingCart{
+    width: 100%;
+    background-color: rgb(193,48,70);
+    color: white;
+    font-size: 1rem;
+    font-size: 1em;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  [class*="example-card"] {
+    min-width: 9rem;
+    max-width: 9rem;
+    min-width: 9em;
+    max-width: 9em;
+    min-height: 16.12em;
+    max-height: 16.12em;
+    margin:0.25em;
+  }
+
+  [class*="titleCard"] {
+    font-size: 0.55rem;
+    font-size: 0.55em;
+    margin-bottom: 0.35rem;
+    margin-bottom: 0.35em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 0.75rem;
+    font-size: 0.75em;
+  }
+
+  .shoppingCart{
+    width: 100%;
+    background-color: rgb(193,48,70);
+    color: white;
+    font-size: 1rem;
+    font-size: 1em;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  [class*="example-card"] {
+    min-width: 8.25rem;
+    max-width: 8.25rem;
+    min-width: 8.25em;
+    max-width: 8.25em;
+    min-height: 16.12em;
+    max-height: 16.12em;
+    margin:0;
+  }
+
+  [class*="titleCard"] {
+    font-size: 0.55rem;
+    font-size: 0.55em;
+    margin-bottom: 0.35rem;
+    margin-bottom: 0.35em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 0.75rem;
+    font-size: 0.75em;
+  }
+
+  .shoppingCart{
+    width: 100%;
+    background-color: rgb(193,48,70);
+    color: white;
+    font-size: 1rem;
+    font-size: 1em;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 799px) {
+  [class*="example-card"] {
+    min-width: 16.58rem;
+    max-width: 16.58rem;
+    min-width: 16.58em;
+    max-width: 16.58em;
+    min-height: 20.12em;
+    max-height: 20.12em;
+    margin:1em;
+  }
+
+  [class*="titleCard"] {
+    font-size: 1.25rem;
+    font-size: 1.15em;
+    margin-bottom: 0.5rem;
+    margin-bottom: 0.5em;
+    min-width: 3em;
+    max-height: 3em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 2.5rem;
+    font-size: 2.5em;
+  }
+
+  .shoppingCart{
+    font-size: 1.5rem;
+    font-size: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  [class*="example-card"] {
+    min-width: 16.58rem;
+    max-width: 16.58rem;
+    min-width: 16.58em;
+    max-width: 16.58em;
+    min-height: 23.12em;
+    max-height: 23.12em;
+    margin:1em;
+    margin-top:3em;
+    margin-bottom:1.5em;
+
+  }
+
+  [class*="titleCard"] {
+    font-size: 1.25rem;
+    font-size: 1.15em;
+    margin-bottom: 0.5rem;
+    margin-bottom: 0.5em;
+    min-width: 3em;
+    max-height: 3em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 1.5em;
+  }
+
+  .shoppingCart{
+    font-size: 1.5rem;
+    font-size: 1.25em;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  [class*="example-card"] {
+    min-width: 16.58rem;
+    max-width: 16.58rem;
+    min-width: 16.58em;
+    max-width: 16.58em;
+    min-height: 22.12em;
+    max-height: 22.12em;
+    margin:1em;
+    margin-top:2.5em;
+    margin-bottom:4em;
+
+  }
+
+  [class*="titleCard"] {
+    font-size: 1.25rem;
+    font-size: 1.15em;
+    margin-bottom: 0.5rem;
+    margin-bottom: 0.5em;
+    min-width: 3em;
+    max-height: 3em;
+  }
+
+  [class*="pvpCard"]{
+    font-size: 1.25em;
+  }
+
+  .shoppingCart{
+    font-size: 1.15em;
+  }
+}
+
+

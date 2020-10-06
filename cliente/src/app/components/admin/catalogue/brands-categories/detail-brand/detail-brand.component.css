@@ -1,0 +1,83 @@
+/*main container */
+
+.detail_screen {
+  margin-top: -24px;
+  height: 100%;
+}
+
+/*header*/
+
+.detail_header {
+  background-color: #224E8F;
+  color: white;
+  padding-left: 10px;
+  margin-right: -24px;
+  margin-left: -24px;
+}
+
+.close_button {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.input_info_client {
+  padding-top: 2em;
+}
+/*footer*/
+
+.detail_footer {
+  background-color: #224E8F;
+  color: white;
+  padding: 0 10px;
+
+  margin: 0;
+}
+
+.mat-dialog-title {
+   margin-bottom: 1.53em;
+}
+
+.mat-dialog-actions {
+  margin-bottom: -40px;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+.detail_actionbar_button {
+  margin: 0;
+  background-color: #1E457E;
+}
+
+.divImage{
+  padding: 0.1em 1em;
+  overflow: hidden;
+  justify-content: center;
+
+
+  max-height: 182px;
+}
+
+
+.inputImageLabel{
+  background-color: rgb(152, 188, 220);
+  width: 100%;
+  height: 100%;
+  color: #1E457E;
+  font-size: 2em;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.inputImage {
+  visibility: hidden;
+  width: 0px;
+}
+
+.imageProduct{
+  min-width: 306px;
+  max-width: 306px;
+  max-height: 182px;
+}

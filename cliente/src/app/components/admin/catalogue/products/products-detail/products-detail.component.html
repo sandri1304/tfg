@@ -1,0 +1,113 @@
+
+<div class="detail_screen d-flex flex-column">
+  <div mat-dialog-title class="detail_header d-flex">
+    <span class="flex-grow-1"><h3>Ficha del producto</h3></span>
+    <span class="close_button"><i class="fa fa-times-circle" aria-hidden="true" (click)="closeDialog()"></i></span>
+  </div>
+  <div class="detail_container d-flex flex-column flex-grow-1">
+    <form [formGroup]="product" >
+      <div class = "d-flex flex-row">
+        <div class = "d-flex flex-column">
+          <div class="d-flex detail_form_container">
+            <mat-form-field appearance="fill">
+              <mat-label>C&oacute;digo Art&iacute;culo</mat-label>
+              <input matInput formControlName="codigoArticulo" >
+            </mat-form-field>
+          </div>
+          <div class="d-flex detail_form_container">
+            <mat-form-field appearance="fill">
+              <mat-label>Categoria</mat-label>
+              <mat-select  class="form-control" formControlName="categoria" appearance="fill">
+                <mat-option *ngFor="let categoria of categorias" [value]="categoria.nombre">
+                  {{categoria.nombre}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="d-flex detail_form_container">
+            <mat-form-field appearance="fill">
+              <mat-label>Marca</mat-label>
+              <mat-select  class="form-control" formControlName="marca" appearance="fill">
+                <mat-option *ngFor="let marca of marcas" [value]="marca.nombre">
+                  {{marca.nombre}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="d-flex detail_form_container">
+            <mat-form-field appearance="fill">
+              <mat-label>Modelo</mat-label>
+              <input matInput formControlName="modelo">
+            </mat-form-field>
+          </div>
+        </div>
+        <div id="ficheroDiv" class=" d-flex flex-grow-1 divImage">
+          <div *ngIf="imagen else noImageTemplate">
+            <label for="imageFile" class = "inputImageLabel">
+              <img mat-card-image src="{{imagen}}" class="imageProduct">
+            </label>
+          </div>
+          <input type="file" #imagefile id = "imageFile" class = "inputImage" (change)="onImageChange(imagefile.files[0])">
+          <ng-template #noImageTemplate>
+            <label for="imageFile" class = "inputImageLabel"> Imagen no disponible.<br> Pulsa aquí para seleccionar una. </label>
+          </ng-template>
+        </div>
+      </div>
+      <div class="d-flex flex-row detail_form_container" >
+        <mat-form-field appearance="fill" style="margin-right:2em;" id = "divPVP">
+          <mat-label>PVP</mat-label >
+          <input  type="number" matInput formControlName="pvp">
+        </mat-form-field >
+        <mat-form-field appearance="fill" style="margin-right:2em;" id = "divPVPT">
+          <mat-label>PVP Tarifa</mat-label>
+          <input  type="number" matInput formControlName="pvpTarifa">
+        </mat-form-field>
+        <mat-form-field appearance="fill" id = "divStock" style="margin-right:2em;">
+          <mat-label style="margin-bottom:2em;" >Stock</mat-label>
+          <input type="number" matInput formControlName="stock">
+        </mat-form-field>
+        <mat-form-field appearance="fill" id = "divOffer">
+          <mat-label>Oferta</mat-label>
+          <mat-select  class="form-control" formControlName="oferta" appearance="fill">
+            <mat-option *ngFor="let oferta of ofertas" [value]="oferta._id">
+              {{oferta.idOferta}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="d-flex flex-row detail_form_container">
+        <angular-editor formControlName="caracteristicas" [config]="editorConfig" class="caracteristicasDiv"></angular-editor>
+      </div>
+      <div class="d-flex flex-row detail_form_container">
+        <angular-editor formControlName="otros" [config]="editorConfig" class="caracteristicasDiv"></angular-editor>
+      </div>
+      <div>
+        <mat-checkbox formControlName="estado" ngDefaultControl >Visible</mat-checkbox>
+      </div>
+      <div>
+        <mat-checkbox formControlName="envioGratuito" ngDefaultControl >Env&iacute;o Gratuito</mat-checkbox>
+      </div>
+      <div mat-dialog-actions class="detail_footer">
+        <div  class="flex-grow-1"></div>
+        <button mat-button class="detail_actionbar_button" (click)="saveProduct()">Guardar</button>
+      </div>
+      <!-- <button type="button" class="btn btn-primary" (click)="saveProduct()">Guardar</button> -->
+
+
+    </form>
+
+    <div class="mat-app-background table-container flex-grow-1">
+      <div class="loading" *ngIf="loadingData || errorLoadingData">
+        <mat-spinner *ngIf="loadingData"></mat-spinner>
+        <div class="errorLoading" *ngIf="errorLoadingData">
+          Ups! Algo se ha roto... Vuelve a intentarlo en unos minutos
+          <button type="button" class="empty_label btn btn-primary btn-block" (click)="closeError()">OK</button>
+        </div>
+      </div>
+
+  </div>
+
+
+
+
+</div>

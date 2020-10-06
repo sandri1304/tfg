@@ -1,0 +1,75 @@
+<div class="homecontainer d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-column">
+
+  <div class="d-flex justify-content-center flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row" style=" padding:0px 20px;" *ngIf="!isSmallScreen">
+    <div>
+      <a class="btn btn-link font-color-navAdmin" routerLink="largeAppliances">Gran Electrodom&eacute;stico</a>
+    </div>
+    <div #kitchenAppliances id="kitchenAppliances">
+      <a class="btn btn-link font-color-navAdmin" routerLink="smallKitchenAppliances">Pequeño Electrodom&eacute;stico de cocina</a>
+    </div>
+    <div #image id="image">
+      <a class="btn btn-link font-color-navAdmin" routerLink="image">Imagen</a>
+    </div>
+    <div #sound id="sound">
+      <a class="btn btn-link font-color-navAdmin" routerLink="sound">Sonido</a>
+    </div>
+    <div #telephony id="telephony">
+      <a class="btn btn-link font-color-navAdmin" routerLink="telephony">Telefon&iacute;a y electr&oacute;nica</a>
+    </div>
+    <div #personalCare id="personalCare">
+      <a class="btn btn-link font-color-navAdmin" routerLink="personalCare">Cuidado Personal</a>
+    </div>
+    <div #computing id="computing">
+      <a class="btn btn-link font-color-navAdmin" routerLink="computing">Inform&aacute;tica</a>
+    </div>
+  </div>
+    <div class="btn-group d-flex flex-grow-1 divCategories" *ngIf="isSmallScreen">
+      <button class="dropdown-toggle button-default" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
+      <div class="dropdown-menu categoriasDropDown">
+        <div class ="d-flex flex-column">
+          <a class="btn btn-link font-color-navAdmin" routerLink="largeAppliances">Gran Electrodom&eacute;stico</a>
+          <a class="btn btn-link font-color-navAdmin" routerLink="smallKitchenAppliances">Pequeño Electrodom&eacute;stico de cocina</a>
+          <a class="btn btn-link font-color-navAdmin" routerLink="image">Imagen</a>
+          <a class="btn btn-link font-color-navAdmin" routerLink="sound">Sonido</a>
+          <a class="btn btn-link font-color-navAdmin" routerLink="telephony">Telefon&iacute;a y electr&oacute;nica</a>
+          <a class="btn btn-link font-color-navAdmin" routerLink="personalCare">Cuidado Personal</a>
+          <a class="btn btn-link font-color-navAdmin" routerLink="computing">Inform&aacute;tica</a>
+        </div>
+      </div>
+    </div>
+  
+
+  
+
+  <ngb-carousel #carousel interval="5000" (slide)="onSlide($event)" class="carousel">
+    <ng-template ngbSlide *ngFor="let image of images; index as i">
+      <div class="{{image}} d-flex flex-row">
+        <div class="image_{{image}}"></div>
+        <div *ngIf="image == 'imagen1'">
+          <p class="carouselImageTitle"> ¡Que no se te escape!</p>
+          <p class="carouselImageText">Con la vuelta al cole¡¡todos los televisores con envio GRATIS!!</p>
+        </div>
+        <div *ngIf="image == 'imagen2'">
+          <p class="carouselImageTitle carouselImagenTitleImagen2"> ¡Adiós verano!</p>
+          <p class="carouselImageText carouselImageTextImagen2">Llevate tu aire acondicionado y te lo instalamos GRATIS!!</p>
+        </div>
+        <div *ngIf="image == 'imagen3'">
+          <p class="carouselImageTitle"> Contra el cambio climático</p>
+          <p class="carouselImageText">Nos encargamos del reciclaje de su antiguo electrodoméstico</p>
+        </div>
+      </div>
+
+    </ng-template>
+
+
+
+  </ngb-carousel>
+
+
+
+  <div class="flex-grow-1">
+    <app-product-home></app-product-home>
+  </div>
+
+
+</div>

@@ -1,0 +1,52 @@
+
+
+.adminContainer{
+  height: 100%;
+}
+
+
+/*****Color fuente nav administracion ********/
+
+
+
+.base-color-navAdmin {
+  background-color: #224E8F !important;
+  min-width: 9.40em;
+}
+.font-color-navAdmin {
+  color: whitesmoke !important;
+
+}
+
+
+a:hover {
+  background-color: rgb(224, 230, 248) !important;
+  color: #224E8F !important;
+  width: 100%;
+  text-align: left;
+}
+
+.btn{
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+}
+.btn:focus,
+.btn:hover{
+  background-color: rgb(224, 230, 248) !important;
+  /* color: #224E8F !important; */
+  width: 100%;
+  color: #224E8F !important;
+  text-align: left;
+  text-decoration: none;
+  border-radius: 0;
+}
+
+
+a:focus {
+  background-color: rgb(224, 230, 248) !important;
+  color: #224E8F !important;
+  text-align: left;
+  text-decoration: none;
+}
+

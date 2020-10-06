@@ -1,0 +1,33 @@
+
+.productsRow{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  width: 90%;
+  margin-top: 0.55em;
+  color: #1E457E;
+  font-size: 2.5em;
+  font-weight: bold;
+  font-family: personalizado, Geneva, sans-serif;
+  align-items: center;
+  background-color:  rgb(235,205,210);
+  text-align: center;
+}
+
+
+.divider {
+  color: rgb(193,48,70);
+  font-size: 5px;
+}
+
+.mat-divider {
+  display: block;
+  margin: 0;
+  border-top-width: 5px;
+  border-top-style: solid;
+  border-top-color: rgb(193,48,70);
+}

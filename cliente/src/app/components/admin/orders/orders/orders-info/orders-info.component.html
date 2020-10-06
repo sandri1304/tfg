@@ -1,0 +1,117 @@
+<div class="detail_screen d-flex flex-column">
+  <div mat-dialog-title class="detail_header d-flex">
+    <span class="flex-grow-1"><h3>Ficha del Pedido</h3></span>
+    <span class="close_button"><i class="fa fa-times-circle" aria-hidden="true" (click)="closeDialog()"></i></span>
+  </div>
+
+  <div class="detail_container d-flex flex-column flex-grow-1">
+    <form [formGroup]="order">
+      <div class="d-flex flex-row detail_form_container input_info_client">
+        <mat-form-field appearance="fill" class="input_info_client" id="idPedido">
+          <mat-label>Identificador</mat-label>
+          <input matInput formControlName="idPedido"  readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input_info_client" id="fechaEntrada">
+          <mat-label>Fecha De Entrada</mat-label>
+          <input matInput formControlName="fechaEntrada" readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input_info_client" id="fechaEntrega">
+          <mat-label>Fecha De Entrega</mat-label>
+          <input matInput formControlName="fechaEntrega"  readonly>
+        </mat-form-field>
+      </div>
+      <div class="d-flex flex-row detail_form_container input_info_client">
+        <mat-form-field appearance="fill" id="estado">
+          <mat-label>Estado</mat-label>
+          <mat-select  class="form-control" formControlName="estado" appearance="fill">
+            <mat-option *ngFor="let status of estados" [value]="status.nombre">
+              {{status.nombre}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input_info_client" id="email">
+          <mat-label>Correo Cliente</mat-label>
+          <input matInput formControlName="usuarios"  readonly>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input_info_client" id="cobrado">
+          <mat-label>Cobrado</mat-label>
+          <input matInput formControlName="cobrado">
+        </mat-form-field>
+      </div>
+
+      <div class="d-flex flex-row detail_form_container input_info_client">
+        <Br/>
+      </div> 
+
+
+      <div class="table_delivery_container table-container">
+
+        <div class="loading" *ngIf="loadingData || errorLoadingData">
+          <mat-spinner *ngIf="loadingData"></mat-spinner>
+          <div class="errorLoading" *ngIf="errorLoadingData">
+            Ups! Algo se ha roto... Vuelve a intentarlo en unos minutos
+            <button type="button" class="empty_label btn btn-primary btn-block" (click)="closeError()">OK</button>
+          </div>
+        </div>
+
+        
+        <table mat-table [dataSource]="dataProducts" matSort>
+          <ng-container matColumnDef="codigoArticulo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>C&oacute;digo</th>
+            <td mat-cell *matCellDef="let row">{{row.codigoArticulo}}</td>
+          </ng-container>
+          <ng-container matColumnDef="categoria">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Categoria</th>
+            <td mat-cell *matCellDef="let row">{{row.categoria}}</td>
+          </ng-container>
+          <ng-container matColumnDef="marca">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Marca</th>
+            <td mat-cell *matCellDef="let row">{{row.marca}}</td>
+          </ng-container>
+          <ng-container matColumnDef="modelo">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Modelo</th>
+            <td mat-cell *matCellDef="let row">{{row.modelo}}</td>
+          </ng-container>
+          <ng-container matColumnDef="cantidad">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Cantidad</th>
+            <td mat-cell *matCellDef="let row">{{row.cantidad}}</td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      </div>
+      <mat-paginator [length]="resultsLength" [pageSizeOptions]="[5]" showFirstLastButtons></mat-paginator>
+
+
+      <div mat-dialog-actions class="detail_footer">
+        <div  class="flex-grow-1"></div>
+        <button mat-button class="detail_actionbar_button" (click)="updateOrder()">Actualizar Pedido</button>
+      </div>
+     </form>
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

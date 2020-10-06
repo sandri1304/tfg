@@ -1,0 +1,188 @@
+.userProfile {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: personalizado, Geneva, sans-serif;
+  color: #1E457E;
+  font-weight: bold;
+  padding-top: 1em;
+  font-size: 2em;
+}
+
+
+.personalData  {
+  padding: 0.55em;
+  background-color: white;
+  margin: 1.55em;
+  box-shadow: 1px -2px 1px  rgb(235,205,210);
+}
+
+.labelInput {
+  font-size: 1em;
+  font-weight: bold;
+  width: 10%;
+}
+
+.inputData {
+  margin-left: 0.55em;
+  width:  50%;
+  border: 1px solid black;
+}
+
+.obligatory {
+  color: red;
+  padding-left: 0.25em;
+}
+
+.default_button {
+  width: 100%;
+  background-color: #1E457E;
+  color: white;
+  padding: 0.25em;
+  margin-bottom: 0.55em;
+}
+
+.default_button:hover {
+  background-color: rgb(166,187,210);
+  color:  #1E457E;
+  cursor: pointer;
+}
+
+.buttons {
+  margin-right: 1.55em;
+  margin-left: 0.75em;
+}
+
+@media only screen and (max-width: 823px) {
+
+  .labelInput {
+    width: 18%;
+  }
+
+  .inputData {
+    margin-left: 1em;
+    width:  55%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .labelInput {
+    width: 18.5%;
+  }
+
+  .inputData {
+    margin-left: 1em;
+    width:  55%;
+  }
+}
+
+@media only screen and (max-width: 732px) {
+
+  .labelInput {
+    width: 15%;
+  }
+  .inputData {
+    margin-left: 1.55em;
+    width:  45%;
+  }
+}
+
+@media only screen and (max-width: 667px) {
+
+  .labelInput {
+    width: 20.5%;
+  }
+
+  .inputData {
+    margin-left: 1em;
+    width:  55%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+
+  .labelInput {
+    width: 22%;
+  }
+
+  .inputData {
+    margin-left: 0.55em;
+    width:  55%;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+
+  .labelInput {
+    width: 22%;
+  }
+
+  .inputData {
+    margin-left: 1em;
+    width:  70%;
+  }
+
+  .checkboxButton2 {
+    font-size: 0.95em;
+  }
+}
+
+
+@media only screen and (max-width: 375px) {
+
+  .labelInput {
+    width: 22%;
+    font-size: 0.85em;
+  }
+
+  .inputData {
+    margin-left: 1em;
+    width:  70%;
+  }
+
+  .checkboxButton2 {
+    font-size: 0.85em;
+  }
+
+  #emailId {
+    font-size: 0.75em;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+
+  .labelInput {
+    width: 22%;
+    font-size: 0.85em;
+  }
+
+  .inputData {
+    margin-left: 1em;
+    width:  70%;
+  }
+
+  .checkboxButton2 {
+    font-size: 0.80em;
+  }
+
+  #emailId {
+    font-size: 0.75em;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+
+  .checkboxButton2 {
+    font-size: 0.70em;
+  }
+
+}
+
+

@@ -1,0 +1,64 @@
+.forgetPassword {
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 0em;
+}
+
+.titleForget {
+    font-family: personalizado, Geneva, sans-serif;
+    font-weight: bold;
+    color:  #1E457E;
+    font-size: 1.55em;
+}
+
+.contentForgetPassword {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 1px -2px 1px  rgb(235,205,210);
+    width: 85%;
+}
+
+.inputText {
+    padding-left: 0 1em;
+    width: 70%;
+}
+
+.formForget {
+    width: 100%;
+    
+
+}
+
+.inputForget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2em;
+}
+
+.buttonForget {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2em;
+}
+
+.detail_button {
+    background-color:  #1E457E;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.55em;
+    font-size: 1em;
+}

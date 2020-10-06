@@ -1,0 +1,79 @@
+<div class="d-flex justify-content-center flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row categories" style=" padding:0px 20px;" *ngIf="!isSmallScreen3">
+  <div #largeAppliances id="largeAppliances" [class.selectedLink] = "classLarge" *ngIf="!classLarge" class="textCategorie">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/largeAppliances">Gran Electrodom&eacute;stico</a>
+  </div>
+  <div #kitchenAppliances id="kitchenAppliances" [class.selectedLink] = "classSmall" *ngIf="!classSmall" class="textCategorie">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/smallKitchenAppliances">Pequeño Electrodom&eacute;stico de
+      cocina</a>
+  </div>
+  <div #image id="image" [class.selectedLink] = "classImage" *ngIf="!classImage" class="textCategorie">
+    <a class="btn btn-link font-color-navAdmin categories" routerLink="/home/image">Imagen</a>
+  </div>
+  <div #sound id="sound" [class.selectedLink] = "classSound" *ngIf="!classSound" class="textCategorie">
+    <a class="btn btn-link font-color-navAdmin categories" routerLink="/home/sound">Sonido</a>
+  </div>
+  <div #telephony id="telephony" [class.selectedLink] = "classTelephony" *ngIf="!classTelephony" class="textCategorie">
+    <a class="btn btn-link font-color-navAdmin categories" routerLink="/home/telephony">Telefon&iacute;a y electr&oacute;nica</a>
+  </div>
+  <div #personalCare id="personalCare" [class.selectedLink] = "classPersonalCare" *ngIf="!classPersonalCare" class="textCategorie">
+    <a class="btn btn-link font-color-navAdmin categories" routerLink="/home/personalCare">Cuidado Personal</a>
+  </div>
+  <div #cleaning id="cleaning" [class.selectedLink] = "classCleaning" *ngIf="!classCleaning" class="textCategorie">
+    <a class="btn btn-link font-color-navAdmin categories" routerLink="/home/cleaning">Limpieza</a>
+  </div>
+  <div #computing id="computing" [class.selectedLink] = "classComputing" *ngIf="!classComputing" class="textCategorie">
+    <a class="btn btn-link font-color-navAdmin categories" routerLink="/home/computing">Inform&aacute;tica</a>
+  </div>
+</div>
+
+<div class="btn-group d-flex flex-grow-1 divCategories" *ngIf="isSmallScreen3">
+  <button class="dropdown-toggle button-default" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
+  <div class="dropdown-menu categoriasDropDown">
+    <div class ="d-flex flex-column">
+      <a class="btn btn-link font-color-navAdmin" routerLink="largeAppliances">Gran Electrodom&eacute;stico</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="smallKitchenAppliances">Pequeño Electrodom&eacute;stico de cocina</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="image">Imagen</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="sound">Sonido</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="telephony">Telefon&iacute;a y electr&oacute;nica</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="personalCare">Cuidado Personal</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="computing">Inform&aacute;tica</a>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!isSmallScreen && !isSmallScreen2" class="homeCategory">
+
+
+
+  <div class="title">
+    <h3 class="fontTitle">{{title}}</h3>
+  </div>
+  <mat-grid-list cols="4"  class="grid">
+    <mat-grid-tile *ngFor="let p of categories" class="rowStyles">
+      <app-client-categorie [dataCategory]="p" ></app-client-categorie>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div *ngIf="isSmallScreen && !isSmallScreen2" class="homeCategory">
+  <div class="title">
+    <h3 class="fontTitle">{{title}}</h3>
+  </div>
+  <mat-grid-list cols="3" class="grid">
+    <mat-grid-tile *ngFor="let p of categories" class="rowStyles">
+      <app-client-categorie [dataCategory]="p" ></app-client-categorie>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+<div *ngIf="isSmallScreen2" class="homeCategory">
+  <div class="title">
+    <h3 class="fontTitle">{{title}}</h3>
+  </div>
+  <mat-grid-list cols="1" rowHeight="1:1" class="grid">
+    <mat-grid-tile *ngFor="let p of categories" class="rowStyles">
+      <app-client-categorie [dataCategory]="p" ></app-client-categorie>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+

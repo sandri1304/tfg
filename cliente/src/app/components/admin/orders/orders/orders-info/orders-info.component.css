@@ -1,0 +1,171 @@
+/* main container */
+
+.detail_screen {
+  margin-top: -24px;
+  height: 100%;
+}
+
+/*header*/
+
+.detail_header {
+  background-color: #224E8F;
+  color: white;
+  padding-left: 10px;
+  margin-right: -24px;
+  margin-left: -24px;
+}
+
+.close_button {
+  margin-right: 5px;
+  cursor: pointer; 
+}
+
+
+.admin-screen-container {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px 20px 20px;
+}
+
+.titulo {
+  font-size: 2em;
+}
+
+.table-container {
+  box-shadow: 8px 8px 25px grey;
+  background-color: whitesmoke;
+  margin-top: 15px;
+}
+ 
+.table_delivery_container {
+  height: calc(100% - 50px);
+  overflow: auto;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-header-cell {
+  font-weight: bold !important;
+  color: black;
+  font-size: 1.2em;
+  background-color: whitesmoke;
+}
+
+.iconmargin {
+  margin-right: 10px;
+  color: black;
+  font-size: 1.2em;
+}
+
+.iconheader {
+  margin-right: 10px;
+  font-size: 1em;
+}
+
+.filters_container {
+  margin-bottom: 15px;
+  padding: 10px;
+  box-shadow: 3px 3px 25px grey;
+}
+
+.filter_div {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.empty_label {
+  margin-top: 7px;
+} 
+
+ .mat-column-codigoArticulo, .mat-column-categoria, .mat-column-marca, .mat-column-modelo, .mat-column-cantidad{
+  word-wrap: break-word !important;
+  white-space: unset !important;
+  flex: 0 0 12% !important;
+  width: 12% !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.icon_right {
+  text-align: right;
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorLoading {
+  color: #980000;
+  max-width: 360px;
+  text-align: center;
+  margin-top: 5em;
+}
+
+#idPedido {
+  width: 30%;
+  margin-right:2.5em;
+}
+
+#fechaEntrada {
+  width: 30%;
+  margin-right:2.5em;
+}
+
+#fechaEntrega {
+  width: 30%;
+}
+
+#estado {
+  width: 30%;
+  margin-right:2.5em;
+}
+
+#email {
+  width: 65%
+}
+
+#cobrado {
+  margin-left: 1.5em;
+  width: 35%
+}
+
+/*footer*/
+
+ .detail_footer {
+  background-color: #224E8F;
+  color: white;
+  padding: 0 10px;
+
+  margin: 0;
+}
+
+.mat-dialog-title {
+   margin-bottom: 1.45em;
+}
+
+.mat-dialog-actions {
+  margin-bottom: -40px;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+ 
+.detail_actionbar_button {
+  margin: 0;
+  background-color: #1E457E;
+} 

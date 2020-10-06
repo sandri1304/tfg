@@ -1,0 +1,28 @@
+.contentTermsUse {
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+   
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: personalizado, Geneva, sans-serif;
+    font-weight: bold;
+    color:  #1E457E;
+}
+
+.termsUse {
+    text-align: justify;
+    padding: 1em 1.5em;
+}
+
+a {
+    color: black !important;
+}
+
+.subtitles {
+    padding-bottom: 0.25em;
+}

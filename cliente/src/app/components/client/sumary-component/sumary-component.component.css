@@ -1,0 +1,69 @@
+.containerSumary  {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.titleDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: personalizado, Geneva, sans-serif;
+  color: #1E457E;
+  font-weight: bold;
+  padding-top: 1em;
+  font-size: 2em;
+}
+
+.contentProductCart{
+  margin-left: 1.75em;
+  margin-right: 1.75em;
+  margin-top: 1em;
+  background-color:  white;
+  box-shadow: 1px -2px 1px  rgb(235,205,210);
+}
+
+.productPhoto2 {
+  display: flex;
+  align-items: center;
+}
+
+.imageProduct2 {
+  max-width: 14em;
+  min-width: 14em;
+  max-height: 10em;
+  min-height: 10em;
+}
+
+.contentClass2 {
+  padding: 0 1em;
+}
+
+.imageDiv {
+  width: 100%;
+}
+
+.brandModel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand{
+  display: flex;
+  align-items: center;
+  padding: 0.55em
+}
+
+.model {
+  display: flex;
+  align-items: center;
+}
+
+.pvp2 {
+  display: flex;
+  align-items: center;
+  font-size: 1.55em;
+  font-weight: bold;
+  padding-left: 6em;
+}

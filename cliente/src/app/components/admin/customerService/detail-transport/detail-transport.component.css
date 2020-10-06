@@ -1,0 +1,46 @@
+/*main container */
+
+.detail_screen {
+  margin-top: -24px;
+  height: 100%;
+}
+
+/*header*/
+
+.detail_header {
+  background-color: #224E8F;
+  color: white;
+  padding-left: 10px;
+  margin-right: -24px;
+  margin-left: -24px;
+}
+
+.close_button {
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+/*footer*/
+
+.detail_footer {
+  background-color: #224E8F;
+  color: white;
+  padding: 0 10px;
+
+  margin: 0;
+}
+
+.mat-dialog-title {
+   margin-bottom: 1.53em;
+}
+
+.mat-dialog-actions {
+  margin-bottom: -40px;
+  margin-left: -24px;
+  margin-right: -24px;
+}
+
+.detail_actionbar_button {
+  margin: 0;
+  background-color: #1E457E;
+}

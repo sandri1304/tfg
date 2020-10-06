@@ -1,0 +1,177 @@
+<div class="d-flex justify-content-center flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row categories" style=" padding:0px 20px;" *ngIf="!isSmallScreen4">
+  <div #largeAppliances id="largeAppliances" [class.selectedLink] = "classLarge" *ngIf="!classLarge">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/largeAppliances">Gran Electrodom&eacute;stico</a>
+  </div>
+  <div #kitchenAppliances id="kitchenAppliances" [class.selectedLink] = "classSmall" *ngIf="!classSmall">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/smallKitchenAppliances">Pequeño Electrodom&eacute;stico de
+      cocina</a>
+  </div>
+  <div #image id="image" [class.selectedLink] = "classImage" *ngIf="!classImage">
+    
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/image">Imagen</a>
+  </div>
+  <div #sound id="sound" [class.selectedLink] = "classSound" *ngIf="!classSound">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/sound">Sonido</a>
+  </div>
+  <div #telephony id="telephony" [class.selectedLink] = "classTelephony" *ngIf="!classTelephony">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/telephony">Telefon&iacute;a y electr&oacute;nica</a>
+  </div>
+  <div #personalCare id="personalCare" [class.selectedLink] = "classPersonalCare" *ngIf="!classPersonalCare">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/personalCare">Cuidado Personal</a>
+  </div>
+  <div #cleaning id="cleaning" [class.selectedLink] = "classCleaning" *ngIf="!classCleaning">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/cleaning">Limpieza</a>
+  </div>
+  <div #computing id="computing" [class.selectedLink] = "classComputing" *ngIf="!classComputing">
+    <a class="btn btn-link font-color-navAdmin" routerLink="/home/computing">Inform&aacute;tica</a>
+  </div>
+</div>
+
+<div class="btn-group d-flex flex-grow-1 divCategories" *ngIf="isSmallScreen4">
+  <button class="dropdown-toggle button-default" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categorias</button>
+  <div class="dropdown-menu categoriasDropDown">
+    <div class ="d-flex flex-column">
+      <a class="btn btn-link font-color-navAdmin" routerLink="largeAppliances">Gran Electrodom&eacute;stico</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="smallKitchenAppliances">Pequeño Electrodom&eacute;stico de cocina</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="image">Imagen</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="sound">Sonido</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="telephony">Telefon&iacute;a y electr&oacute;nica</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="personalCare">Cuidado Personal</a>
+      <a class="btn btn-link font-color-navAdmin" routerLink="computing">Inform&aacute;tica</a>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row container_list_categories">
+  <div class="filters d-flex flex-row flex-sm-row flex-md-column flex-lg-column flex-xl-column flex-wrap">
+
+    <div class="flex-grow-1 flex-sm-grow-1 flex-md-grow-0 flex-lg-grow-0 flex-xl-grow-0">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="headerAccordion">
+            Marcas
+          </mat-expansion-panel-header>
+
+           <mat-action-row *ngFor="let brand of brands" class="brandsContent">
+            <mat-checkbox class="checkboxClass"  (change)="changeBrand($event)">{{brand._id}}</mat-checkbox>
+
+          </mat-action-row>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="flex-grow-1 flex-sm-grow-1 flex-md-grow-0 flex-lg-grow-0 flex-xl-grow-0">
+      <mat-accordion>
+        <mat-expansion-panel >
+          <mat-expansion-panel-header class="headerAccordion">
+            Precio
+          </mat-expansion-panel-header>
+          <mat-action-row class="brandsContent">
+            <div class="custom-slider pvpFilter">
+              <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="optionsSlider" (userChangeEnd)="changePrice()"></ng5-slider>
+            </div>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="flex-grow-1 flex-sm-grow-1 flex-md-grow-0 flex-lg-grow-0 flex-xl-grow-0">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="headerAccordion">
+            Disponibilidad
+          </mat-expansion-panel-header>
+          <mat-action-row class="brandsContent">
+            <mat-checkbox class="checkboxClass" (change)="changeAvailability($event)">En Stock</mat-checkbox>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="flex-grow-1 flex-sm-grow-1 flex-md-grow-0 flex-lg-grow-0 flex-xl-grow-0">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="headerAccordion">
+            Ofertas
+          </mat-expansion-panel-header>
+          <mat-action-row class="brandsContent">
+            <mat-checkbox class="checkboxClass" (change)="changeOffer($event)">Con Oferta</mat-checkbox>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <div class="flex-grow-1 flex-sm-grow-1 flex-md-grow-0 flex-lg-grow-0 flex-xl-grow-0">
+      <mat-accordion>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="headerAccordion">
+            Caracter&iacute;sticas
+          </mat-expansion-panel-header>
+          <mat-action-row class="brandsContent">
+            <input type="text" class="form-control" id="feature" placeholder="{{placeholderExample}}"  name="feature" (change)="changeFeatures($event)">
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+  <div class="homeListProducts ">
+    <div class="d-flex flex-column flex-sm-column flex-md-row flex-lg-row flex-xl-row titleDiv">
+      <div class="d-flex flex-grow-1 justify-content-start title">
+        <h3 class="fontTitle">{{category}}</h3>
+      </div>
+      <div class="d-flex flex-grow-1  justify-content-end relevanceDiv">
+        <select  (change)="onChange($event.target.value)" class="relevance">
+            <option selected="true" value="none">--Relevancia--</option>
+            <option value="baratos">Precio:M&aacute;s baratos primero</option>
+            <option value="caros">Precio: M&aacute;s caros primero</option>
+            <option value="ventas">M&aacute;s  vendidos</option>
+            <option value="opiniones">Mejores  opiniones</option>
+        </select>
+      </div>
+    </div>
+    <div *ngIf="!isSmallScreen && !isSmallScreen2 && !isSmallScreen3">
+      <mat-grid-list cols="4"  class="grid">
+        <mat-grid-tile *ngFor="let p of products" class="rowStyles" >
+          <app-client-product  [dataProduct]="p"></app-client-product>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div class="paginator">
+        <mat-paginator [length]="resultsLength" [pageSizeOptions]="[4, 8, 12]" [pageSize]="pageSize" (page)="paginar($event)" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+
+    <div *ngIf="isSmallScreen && !isSmallScreen2 &&  !isSmallScreen3">
+      <mat-grid-list cols="3"  class="grid">
+        <mat-grid-tile *ngFor="let p of products" class="rowStyles" >
+          <app-client-product  [dataProduct]="p"></app-client-product>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div class="paginator">
+        <mat-paginator [length]="resultsLength" [pageSizeOptions]="[4, 8, 12]" [pageSize]="pageSize" (page)="paginar($event)" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+
+    <div *ngIf="isSmallScreen && isSmallScreen2 && !isSmallScreen3 ">
+      <mat-grid-list cols="2"  class="grid">
+        <mat-grid-tile *ngFor="let p of products" class="rowStyles" >
+          <app-client-product  [dataProduct]="p"></app-client-product>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div class="paginator">
+        <mat-paginator [length]="resultsLength" [pageSizeOptions]="[4, 8, 12]" [pageSize]="pageSize" (page)="paginar($event)" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+
+    <div *ngIf="isSmallScreen && isSmallScreen2 && isSmallScreen3 ">
+      <mat-grid-list cols="1"  class="grid">
+        <mat-grid-tile *ngFor="let p of products" class="rowStyles" >
+          <app-client-product  [dataProduct]="p"></app-client-product>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <div class="paginator">
+        <mat-paginator [length]="resultsLength" [pageSizeOptions]="[4, 8, 12]" [pageSize]="pageSize" (page)="paginar($event)" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>

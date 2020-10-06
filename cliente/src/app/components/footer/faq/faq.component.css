@@ -1,0 +1,56 @@
+.contentFaq {
+    width:100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: personalizado, Geneva, sans-serif;
+    font-weight: bold;
+    color:  #1E457E;
+    padding: 1em 0;
+}
+
+.faq  {
+    padding: 0 3em;
+}
+
+.linkFaq:hover {
+    cursor: pointer;
+}
+
+.responseFaq  {
+    text-align: justify;
+    padding: 1em 1.5em;
+}
+
+.selectedLink {
+    color: rgb(192,190,227);
+    font-weight: bold;
+}
+
+.default_button {
+    width: 100%;
+    background-color: #1E457E;
+    color: white;
+    padding: 0.25em;
+    margin-bottom: 0.55em;
+  }
+  
+.default_button:hover {
+    background-color: rgb(166,187,210);
+    color:  #1E457E;
+    cursor: pointer;
+  }
+
+  .responseFaqQeustion {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+
+  .inputDataQuestion {
+      height: 175px;
+  }

@@ -1,0 +1,113 @@
+<div class="d-flex flex-column containerCart">
+  <h3  class="title">{{productTitle}} en  tu cesta</h3>
+
+  <div class="d-flex flex-column  contentProductCart">
+    <div class="d-flex flex-row justify-content-start flex-grow-1 headerCart" *ngIf="!isSmallScreen">
+      <span class="col-5">Art&iacute;culo</span>
+      <span class="col-1 pvpTitle">Precio</span>
+      <span class="col-2 units">Unidades</span>
+      <span class="col-1 totalHeader">Total</span>
+      <span class="col-3 typeSend">Tipo de Env&iacute;o</span>
+    </div>
+    <div *ngIf="!isSmallScreen">
+      <div class="d-flex flex-row productList"  *ngFor="let p of products; index as i">
+        <div class="col-5 d-flex flex-row">
+          <div class="productPhoto">
+            <img src="{{p.imagen}}" class="imageProduct">
+          </div>
+          <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-column flex-xl-row brandModel">
+            <div class="brand">
+              <span>{{p.marca}}</span>
+            </div>
+            <div class="model">
+              <span>{{p.modelo}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="pvp col-1">
+          <span>{{p.pvp}}€</span>
+        </div>
+        <div class ="d-flex flex-row col-2 numProductsDiv">
+          <button class="detail_actionbar_button" (click)="lessProduct(i)">-</button>
+          <input type="text" class="form-control numProductInput" id="titleReview" [(ngModel)]="p.numProduct">
+          <button  class="detail_actionbar_button" (click)="addProduct(i)">+</button>
+        </div>
+        <div class="pvp col-1">
+          <span>{{p.totalpvp}}€</span>
+        </div>
+        <div class= "d-flex flex-row col-3 sendOnline">
+          <div class="d-flex flex-column col-2  ckeckbox justify-content-start">
+            <mat-checkbox class="checkboxButton" [(ngModel)]="p.online" (change)="modifiedOnline($event, i)" >Env&iacute;o a domicilio</mat-checkbox>
+            <mat-checkbox class="checkboxButton" [(ngModel)]="p.shop" (change)="modifiedShop($event, i)" >Recogida en tienda</mat-checkbox>
+          </div>
+          <div class="col-2 buttonRemove justify-content-end">
+            <span class="close_button"><i class="fa fa-times-circle" aria-hidden="true" (click)="removeProduct(i)"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="isSmallScreen">
+      <div class="d-flex flex-row productList"  *ngFor="let p of products; index as i">
+        <div class="d-flex flex-row">
+          <div class="productPhoto2">
+            <img src="{{p.imagen}}" class="imageProduct2">
+          </div>
+          <div class="d-flex flex-column flex-grow-1 contentClass2">
+            <div class="d-flex flex-column brandModel2">
+              <div class="brand2">
+                <span>{{p.marca}}</span>
+              </div>
+              <div class="model2">
+                <span>{{p.modelo}}</span>
+              </div>
+            </div>
+            <div class="d-flex flex-row flex-grow-1">
+              <div class ="d-flex flex-row numProductsDiv2 justify-content-start">
+                <button class="detail_actionbar_button2" (click)="lessProduct(i)">-</button>
+                <input type="text" class="form-control numProductInput2" id="titleReview" [(ngModel)]="p.numProduct">
+                <button  class="detail_actionbar_button2" (click)="addProduct(i)">+</button>
+              </div>
+              <div class="pvp2 justify-content-end">
+                <span>{{p.totalpvp}}€</span>
+              </div>
+            </div>
+            <div class= "d-flex flex-row sendOnline2">
+              <div class="d-flex flex-column ckeckbox2 justify-content-start">
+                <mat-checkbox class="checkboxButton2" [(ngModel)]="p.online" (change)="modifiedOnline($event, i)" >Env&iacute;o a domicilio</mat-checkbox>
+                <mat-checkbox class="checkboxButton2" [(ngModel)]="p.shop" (change)="modifiedShop($event, i)" >Recogida en tienda</mat-checkbox>
+              </div>
+              <div class="col-2 buttonRemove2 justify-content-end">
+                <span class="close_button2"><i class="fa fa-times-circle" aria-hidden="true" (click)="removeProduct(i)"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column total">
+    <div class="total d-flex flex-row">
+      <div class="d-flex flex-grow-1 totalTitle">
+        <span>Total</span>
+      </div>
+      <div class="d-flex pvpTotal">
+        {{total}}€
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="d-flex flex-row  buttons">
+      <div class="d-flex flex-grow-1 justify-content-start">
+        <button class="detail_action  bar_button " (click)="removeCart()">Vaciar cesta</button>
+      </div>
+      <div class="d-flex flex-grow-1 justify-content-end">
+        <button class="detail_action bar_button" (click)="keepBuying()">Seguir comprando</button>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column buttonProcess">
+    <div class="proccessOrderButton d-flex flex-grow-1" (click)="processOrder()">
+      <span>Tramitar Pedido</span>
+      <!-- <button class="detail_action bar_button proccessOrderButton" (click)="processOrder()">Tramitar Pedido</button> -->
+    </div>
+  </div>
+</div>

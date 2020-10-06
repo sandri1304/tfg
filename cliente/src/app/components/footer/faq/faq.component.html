@@ -1,0 +1,161 @@
+<div class="contentFaq">
+    <div class="d-flex flex-column flex-sm-column flex-md-column flex-lg-row flex-xl-row">
+        <div class="d-flex flex-column flex-grow-1">
+            <div class="title">
+                <h3>Antes de realizar mi pedido</h3>
+            </div>
+            <div class="faq d-flex flex-grow-1 flex-column" >
+                <p class="linkFaq" [class.selectedLink] = "sameProducts" (click)="selectItem(1)">¿Son los mismos productos que en tienda f&iacute;sica?</p>
+                <p class="linkFaq" [class.selectedLink] = "samePrice" (click)="selectItem(2)">¿Los precios son los mismos que en la tienda f&iacute;sica?</p>
+                <p class="linkFaq" [class.selectedLink] = "daysOrder" (click)="selectItem(3)">¿En cu&aacute;ntos d&iacute;as tengo el pedido en casa? </p>
+                <p class="linkFaq" [class.selectedLink] = "payments"(click)="selectItem(4)">¿Qu&eacute; formas de pago ten&eacute;is disponibles?</p>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-grow-1">
+            <div class="title"> 
+                <h3>Ya he recibido mi pedido</h3>
+            </div>
+            <div class="faq d-flex flex-grow-1 flex-column">
+                <p class="linkFaq" [class.selectedLink] = "schedule" (click)="selectItem(5)">¿En qu&eacute; horario se entrega el pedido?</p>
+                <p class="linkFaq" [class.selectedLink] = "shop" (click)="selectItem(6)">¿Cu&aacute;ndo puedo recoger el pedido en  tienda?</p>
+                <p class="linkFaq" [class.selectedLink] = "dataBill" (click)="selectItem(7)">¿Se pueden modificar los datos de facturaci&oacute;n? </p>
+                <p class="linkFaq" [class.selectedLink] = "returnProduct" (click)="selectItem(8)">¿C&oacute;mo debo embalar el producto para su devoluci&oacute;n?</p>
+            </div>
+        </div>
+        <div class="d-flex flex-column flex-grow-1">
+            <div class="title">
+                <h3>Mi pedido está en casa</h3>
+            </div>
+            <div class="faq d-flex flex-grow-1 flex-column">
+                <p class="linkFaq" [class.selectedLink] = "lessProduct" (click)="selectItem(9)">¿Qu&eacute; hago si al pedido le faltan productos?</p>
+                <p class="linkFaq" [class.selectedLink] = "badCondition" (click)="selectItem(10)">¿Qu&eacute; hago si el pedido ha llegado en malas condiciones?</p>
+                <p class="linkFaq" [class.selectedLink] = "otherOrder" (click)="selectItem(11)">¿Qu&eacute; hago si el pedido no es el m&iacute;o? </p>
+                <p class="linkFaq" [class.selectedLink] = "warranty" (click)="selectItem(12)">¿Qu&eacute; garant&iacute;as tienen los productos?</p>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="sameProducts">
+        <div class="title">
+            <h3>¿Son los mismos productos que en tienda f&iacute;sica?</h3>
+        </div>
+        <div class="responseFaq">
+            <p><strong>Nevado</strong> tiene demasiadas referencias en su web como para almacenar todos los productos en la tienda f&iacute;sica, por lo que muchos productos no est&aacute;n disponibles. Para conocer si el producto deseado se encuentra en nuestra tienda f&iacute;sica lo mejor es que contactes con nosotros. Estaremos encantados de ayudarle.</p>
+        </div>
+    </div>
+    <div *ngIf="samePrice">
+        <div class="title">
+            <h3>¿Los precios son los mismos que en la tienda f&iacute;sica?</h3>
+        </div>
+        <div class="responseFaq">
+            <p>Los precios no var&iacute;an por comprarlos a trav&eacute;s de la tienda f&iacute;sica o de la tienda online. Pero, es verdad, que en determinadas ocasiones lanzamos ofertas exclusivas de la web, que los productos en tienda f&iacute;sica no tienen. De esta manera, promocionamos la venta online y ampliamos mercado.</p>
+        </div>
+    </div>
+    <div *ngIf="daysOrder">
+        <div class="title">
+            <h3>¿En c&uacute;antos d&iacute;as tengo el pedido en casa?</h3>
+        </div>
+        <div class="responseFaq">
+            <p>Intentamos que los productos lleguen a casa en un plazo m&aacute;ximo de 72 horas. Pero, hay veces que no se pueden cumplir estos plazos. Una de estas causas es debido a que el producto no est&eacute; en stock, por lo que el plazo aumenta. Y, otro de los motivos m&aacute;s comunes y ajenos a nosotros es por la carga de trabajo de nuestras empresas de transporte. Por esta raz&oacute;n no trabajamos en exclusividad con una empresa.</p>
+        </div>
+    </div>
+    <div *ngIf="payments">
+        <div class="title">
+            <h3>¿Qu&eacute; formas de pago ten&eacute;is disponibles?</h3>
+        </div>
+        <div class="responseFaq">
+            <ul>
+                <li>Tarjeta bancaria. El pago del producto o productos se realiza en el momento de finalizar el pedido.</li>
+                <li>Contrareembolso. El pago del producto o productos se realiza en el momento de la entrega.</li>
+                <li>Paypal. El pago del producto o productos se realiza justo en el momento de finalización del pedido, del mismo modo que por tarjeta bancaria.</li>
+            </ul>
+        </div>
+    </div>
+    <div *ngIf="schedule">
+        <div class="title">
+            <h3>¿En qu&eacute; horario se entrega el pedido?</h3>
+        </div>
+        <div class="responseFaq">
+            <p>El horario de entrega del pedido no depende tanto de nosotros como de la empresa de transporte. Una vez que la empresa de transporte tenga el pedido, se pondr&aacute; en contacto con usted para acordar el horario que mas le convenga. Siempre entre las 9:00 y las 22:00 horas.</p>
+        </div>
+    </div>
+    <div *ngIf="shop">
+        <div class="title">
+            <h3>¿Cu&aacute;ndo puedo recoger el pedido en  tienda?</h3>
+        </div>
+        <div class="responseFaq">
+            <p>Si el producto o productos est&aacute;n en stock, su pedido estar&aacute; disponible en tienda en un plazo de 12 horas.</p>
+        </div>
+    </div>
+    <div *ngIf="dataBill">
+        <div class="title">
+            <h3>¿Se pueden modificar los datos de facturaci&oacute;n?</h3>
+        </div>
+        <div class="responseFaq">
+            <p>Una vez que se ha realizado el pedido no se pueden realizar modificaciones en la factura, pues la ley no permite modificar ni fechas ni datos personales al no ser que se hubiese producido un error en la identificaci&oacute;n fiscal. Pero, nunca se podr&aacute; cambiar de titular.</p>
+        </div>
+    </div>
+    <div *ngIf="returnProduct">
+        <div class="title">
+            <h3>¿C&oacute;mo debo embalar el producto para su devoluci&oacute;n?</h3>
+        </div>
+        <div class="responseFaq">
+            <p>Si se desea devolver el producto se debe hacer con su embalaje original, incluyendo todo el contenido del pedido. En caso de no conservar el embalaje original no podr&aacute; realizar la devoluci&oacute;n. Si el producto no se devuelve en perfectas condiciones se puede cobrar un importe extra como concepto de merma.</p>
+        </div>
+    </div>
+    <div *ngIf="lessProduct">
+        <div class="title">
+            <h3>¿Qu&eacute; hago si al pedido le faltan productos?</h3>
+        </div>
+        <div class="responseFaq">
+            <p>Si recibes el pedido y no est&aacute; completo ponte en contacto con nosotros antes de 24 horas para tratar el asunto y solucionar el problema lo antes posible.</p>
+        </div>
+    </div>
+    <div *ngIf="badCondition">
+        <div class="title">
+            <h3>¿Qu&eacute; hago si el pedido ha llegado en malas condiciones?</h3>
+        </div>
+        <div class="responseFaq">
+            <p>Si el pedido que ha recibido est&aacute; en malas condiciones por problemas en el transporte llame a la empresa de transporte para reclarmar y, pong&aacute;se en contacto con nosotros para tener constancia de lo sucedido. H&aacute;galo en las 24 horas siguientes a recibir el producto en casa.</p>
+        </div>
+    </div>
+    <div *ngIf="otherOrder">
+        <div class="title">
+            <h3>¿Qu&eacute; hago si el pedido no es el m&iacute;o?</h3>
+        </div>
+        <div class="responseFaq">
+            <p>P&oacute;ngase en contacto con nosotros en las 24horas siguientes a recibir el producto para tramitar la devoluci&oacute;n y el env&iacute;o de su pedido.</p>
+        </div>
+    </div>
+    <div *ngIf="warranty">
+        <div class="title">
+            <h3>¿Qu&eacute; garant&iacute;as tienen los productos?</h3>
+        </div>
+        <div class="responseFaq">
+            <p>Todos nuestros productos tienen dos a&ntilde;os de garant&iacute;as ampliable seg&uacute;n fabricante al m&aacute;ximo aplicado por los mismos. Para aplicar la garant&iacute;a se deber&aacute; tener el ticket o factura del producto. La garant&iacute; no cubre los defectos provocados por un mal uso del producto y/o manipulaci&oacute;n del mismo fuera de su naturaleza, características o funcionamiento. En este caso el cliente será el responsable de reparar el producto. Queda fuera de la garant&iacute;a:</p>
+            <ul>
+                <li>Defectos producidos por la utilizaci&oacute;n inadecuada fuera de las instrucciones del producto.</li>
+                <li>Defectos producidos por el desgaste del producto.</li>
+                <li>Defectos producidos por accidentes dom&eacute;sticos, tales como accidentes el&eacute;ctricos.</li>
+                <li>Defectos producidos por la modificaci&oacute;n o reparaci&oacute;n del producto por el cliente.</li>
+                <li>Defectos producidos por la incorrecta instalaci&oacute;n del software/a por parte del cliente. As&iacute; como de una incorrecta instalaci&oacute;n de un elemento externo del producto adquirido en <strong>Nevado</strong>.</li>
+                <li>Defectos producidos por virus inform&aacute;ticos.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div *ngIf="userService.isLogged()">
+        <div class="title">
+            <h3>Env&iacute;a su pregunta</h3>
+        </div>
+        <div class="responseFaqQeustion">
+            <form [formGroup]="sendQuestion" id="userForm" (ngSubmit)="onSubmit(sendQuestion.value)">
+                <div class ="form-group d-flex flex-row">
+                    <textarea  #question type="text" class="form-control inputDataQuestion" id="question" formControlName="question" name="question"></textarea>
+                </div>
+                <div class="d-flex justify-content-end flex-grow-1">
+                    <button type="submit" class="btn btn-primary default_button">Enviar</button>
+                  </div>
+            </form>
+        </div>
+    </div>
+</div>

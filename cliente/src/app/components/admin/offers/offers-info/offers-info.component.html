@@ -1,0 +1,53 @@
+<div class="detail_screen d-flex flex-column">
+  <div mat-dialog-title class="detail_header d-flex">
+    <span class="flex-grow-1"><h3>Ficha de la oferta</h3></span>
+    <span class="close_button"><i class="fa fa-times-circle" aria-hidden="true" (click)="closeDialog()"></i></span>
+  </div>
+  <div class="detail_container d-flex flex-column flex-grow-1">
+    <form [formGroup]="offer" >
+      <div class="d-flex flex-row detail_form_container">
+        <mat-form-field appearance="fill" class="input_info_client" id="idOffer">
+          <mat-label>Id de la Oferta</mat-label>
+          <input matInput formControlName="idOferta">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input_info_client" id="discount">
+          <mat-label>% De Descuento</mat-label>
+          <input matInput formControlName="descuento">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input_info_client" id="initDate">
+          <mat-label>Fecha de Inicio</mat-label>
+          <input type="date" matInput formControlName="fechaInicio">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input_info_client" id="endDate">
+          <mat-label>Fecha de Fin</mat-label>
+          <input type="date" matInput formControlName="fechaFin">
+        </mat-form-field>
+      </div>
+      <div class="d-flex flex-row detail_form_container" >
+        <mat-form-field appearance="fill" class="input_info_client" id="descriptionWidth">
+          <mat-label>Descripci&oacute;n</mat-label>
+          <textarea matInput formControlName="descripcion" id="description"> </textarea>
+        </mat-form-field>
+      </div>
+      <div *ngIf="errorSaveOffer" class="mat-app-background table-container flex-grow-1" [ngStyle] = "errorFormat">
+        {{messageError}}
+      </div>
+      <div mat-dialog-actions class="detail_footer">
+        <div  class="flex-grow-1"></div>
+        <button mat-button class="detail_actionbar_button" (click)="saveOffer()">Guardar</button>
+      </div>
+      <!-- <button type="button" class="btn btn-primary" (click)="saveOffer()">Guardar</button> -->
+
+    </form>
+
+    <!-- <div class="mat-app-background table-container flex-grow-1">
+      <div class="loading" *ngIf="errorLoadingData">
+        <mat-spinner *ngIf="errorLoadingData"></mat-spinner>
+        <div class="errorLoading" *ngIf="errorLoadingData">
+          Ups! Algo se ha roto... Vuelve a intentarlo en unos minutos
+          <button type="button" class="empty_label btn btn-primary btn-block" (click)="closeError()">OK</button>
+        </div>
+      </div> -->
+
+  </div>
+</div>

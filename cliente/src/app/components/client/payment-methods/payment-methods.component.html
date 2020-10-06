@@ -1,0 +1,69 @@
+<div class="paymentsMethods">
+  <div class="titleDiv">
+    <h3 class="title">Seleccione un m&eacute;todo de pago</h3>
+  </div>
+
+
+  <div class="paymentsMtehodDiv  ">
+    <mat-radio-group [(ngModel)]="payment" (change)="radioChange($event)">
+      <div class="d-flex flex-column flex-sm-column flex-md-row  flex-lg-row flex-xl-row">
+        <mat-radio-button *ngFor = "let p of payments" value="{{p.nombre}}" class="d-flex flex-grow-1">
+          <div class="d-flex flex-row">
+            <div class="imageHeader">
+              <img mat-card-image src="{{p.imagen}}" class="imagePayment">
+            </div>
+          </div>
+        </mat-radio-button>
+      </div>
+    </mat-radio-group>
+  </div>
+  <div *ngIf="payment=='Tarjeta de crédito'" class="paymentsMtehodDiv">
+    <form [formGroup]="creditCardForm" id="creditCardForm" (ngSubmit)="onSubmit(creditCardForm.value)">
+      <div class="d-flex flex-column flex-sm-column flex-md-row  flex-lg-row flex-xl-row">
+        <div class="d-flex flex-column  flex-grow-1 inputDiv">
+          <label class="labelInput">Tipo tarjeta <span class="obligatory">*</span></label>
+          <select class="form-control inputDataCreditCard" formControlName="typeCard" id="typeCard" name="typeCard">
+            <option selected>Seleccione</option>
+            <option value="MasterCard">MasterCard</option>
+            <option value="Visa">Visa</option>
+          </select>
+        </div>
+        <div class="d-flex flex-column flex-grow-1 inputDiv">
+          <label class="labelInput">Nombre Titular<span class="obligatory">*</span></label>
+          <input type="text" class="form-control inputDataCreditCard" id="nameHeadline"  formControlName="nameHeadline" name="nameHeadline">
+        </div>
+        <div class="d-flex  flex-column flex-grow-1 inputDiv">
+          <label class="labelInput">Fecha Expiraci&oacute;n<span class="obligatory">*</span></label>
+          <input type="text" class="form-control inputDataCreditCard" id="expirationDate"  formControlName="expirationDate" name="expirationDate" placeHolder="MM/YYYY">
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-sm-column flex-md-row  flex-lg-row flex-xl-row">
+        <div class="d-flex  flex-column inputDiv flex-grow-1">
+          <label class="labelInput">Número Tarjeta<span class="obligatory">*</span></label>
+          <input type="number" class="form-control inputDataCreditCard" id="numCard"  formControlName="numCard" name="numCard">
+        </div>
+
+        <div class="d-flex  flex-column inputDiv flex-grow-1">
+          <label class="labelInput">CCV<span class="obligatory">*</span></label>
+          <input type="number" class="form-control inputDataCreditCard" id="ccv"  formControlName="ccv" name="ccv">
+        </div>
+      </div>
+      <div class="d-flex flex-column buttonProcess">
+        <div class="proccessOrderButton d-flex flex-grow-1 justify-content-end">
+          <button type="submit" class="btn btn-primary default_button">Finalizar Pedido</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="payment=='Paypal'" class="paymentsMtehodDiv">
+    <p>Para poder usar este m&eacute;todo necesita disponer de una cuenta de Paypal verificada. Además, de disponer de un saldo igual o superior al importe del carrito. Pulse continuar para finalizar su compra.</p>
+    <div id="paypal-checkout-button"></div>
+    <!-- <button type="submit" class="btn btn-primary default_button">Finalizar Pedido</button> -->
+  </div>
+
+  <div *ngIf="payment=='Contrareembolso'" class="paymentsMtehodDiv">
+    <p>El pago se realizar&aacute; en el momento de la entrega del producto. Pulse continuar para finalizar su comprar.</p>
+    <button type="submit" class="btn btn-primary default_button" (click)="finishShopping()">Finalizar Pedido</button>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+/******** LOGO *********/
+.logo{
+	max-height: 2.5em;
+
+}
+
+.fa-shopping-cart {
+  margin-right: 0.55em;
+}
+@media (max-width: 768px) {
+  .logo {
+	max-height: 2em;
+  }
+}
+

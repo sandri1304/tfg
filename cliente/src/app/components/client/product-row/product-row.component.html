@@ -1,0 +1,73 @@
+<div class="productsRow d-flex flex-column">
+  <div class="title">
+      {{front.title}}
+      <!-- <mat-divider class="divider"></mat-divider> -->
+  </div>
+  <div *ngIf="!isSmallScreen" class= "d-flex justify-content-between flex-row flex-sm-row flex-md-row flex-lg-row flex-xl-row">
+    <div ngbSlide *ngFor="let p of products" >
+      <app-client-product class="d-flex flex-row" [dataProduct]="p"></app-client-product>
+    </div>
+  </div>
+  <div *ngIf="isSmallScreen">
+    <ngb-carousel #carousel interval="2000" (slide)="onSlide($event)" class="carousel">
+      <ng-template ngbSlide *ngFor="let p of products">
+        <app-client-product  [dataProduct]="p"></app-client-product>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <ng-template #templateThreeProduct let-data="data" let-index="index" let-elements="elements">
+    <div class="d-flex flex-row">
+    <app-client-product class="d-flex flex-row" [dataProduct]="data[index]"></app-client-product>
+    <app-client-product class="d-flex flex-row" [dataProduct]="data[index+1]"></app-client-product>
+    <app-client-product class="d-flex flex-row" [dataProduct]="data[index+2]"></app-client-product>
+  </div>
+  </ng-template>
+
+  <ng-template #templateProduct let-data="data">
+    <div class="d-flex flex-row">
+    <app-client-product class="d-flex flex-row" [dataProduct]="data"></app-client-product>
+  </div>
+  </ng-template>
+
+
+
+
+
+
+  <ngb-carousel #carousel interval="2000" (slide)="onSlide($event)" class="carousel">
+    <ng-template ngbSlide *ngFor="let p of products; index as i">
+      <div *ngIf="!isSmallScreen">
+        <ng-container *ngIf="templateThreeProduct" [ngTemplateOutlet]="templateThreeProduct"  [ngTemplateOutletContext]="{data: products, index: i, elements: products.lenght}"></ng-container>
+      </div>
+      <div *ngIf="isSmallScreen">
+        <ng-container *ngIf="templateProduct" [ngTemplateOutlet]="templateProduct"  [ngTemplateOutletContext]="{data: p}"></ng-container>
+      </div>
+
+    </ng-template>
+  </ngb-carousel> -->
+
+
+
+
+
+
+
+
+
+
+
+

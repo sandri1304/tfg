@@ -1,0 +1,69 @@
+.paymentsMethods {
+  width: 100%;
+  height: 100%;
+  background-color: whitesmoke;
+}
+
+.titleDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: personalizado, Geneva, sans-serif;
+  color: #1E457E;
+  font-weight: bold;
+  padding-top: 1em;
+  font-size: 2em;
+}
+
+.paymentsMtehodDiv {
+  margin: 1em 3.75em;
+  background-color: white;
+  box-shadow: 1px -2px 1px  rgb(235,205,210);
+  padding: 1em;
+  padding-left: 2em;
+}
+
+.imageHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagePayment {
+  min-width: 8em;
+  max-width: 8em;
+  min-height: 6em;
+  max-height: 6em;
+  padding: 1.55em;
+}
+
+.inputDiv {
+  padding: 0.25em 1em;
+}
+
+.labelInput{
+  font-weight: bold;
+  padding-left: 0.75em;
+}
+
+.obligatory {
+  color: red;
+}
+
+.buttonProcess {
+  padding: 0.25em 1em;
+}
+
+.default_button {
+  background-color:  #1E457E;
+  color: white;
+  padding: 0.55em;
+  width: 100%;
+  font-size: 1em;
+}
+
+.default_button:hover  {
+  background-color: rgb(166,187,210);
+  color:  #1E457E;
+  cursor: pointer;
+}
