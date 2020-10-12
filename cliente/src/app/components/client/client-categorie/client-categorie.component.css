@@ -19,7 +19,10 @@
 .imageCategory{
   width: 12em;
   height: 10em;
-  margin-left:0.60em !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:0.75em !important;
 }
 
 .contentCard {

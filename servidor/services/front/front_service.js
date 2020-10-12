@@ -81,6 +81,7 @@ frontSrv.getProductsByCategory  = async function(query) {
                 sort: 'ventas',
                 order: 'desc'
         });
+        options.populate = [{path: 'ofertas'}];
         return product.paginate(filters, options);
 }
 
@@ -134,17 +135,10 @@ frontSrv.getProductsCategory  = async function(req, isCount) {
 
         if (req.query.feature != null) {
                 query.match({caracteristicas: { $regex : new RegExp(req.query.feature, "i") } });
-                query.match({otros: { $regex : new RegExp(req.query.feature, "i") } });
+               // query.match({otros: { $regex : new RegExp(req.query.feature, "i") } });
         }
 
-        if (req.query.min != null && utilsHelper.isFloat(req.query.min)) {
-                let min = parseFloat(req.query.min);
-                query.match({pvp: { $gte: min}});
-        }
-        if (req.query.max != null && utilsHelper.isFloat(req.query.max) ) {
-                let max = parseFloat(req.query.max);
-                query.match({pvp: { $lte: max}});
-        }
+  
         if (req.query.brands != null) {
                 let brands  = req.query.brands.split(',');
                 if(brands.length > 0){
@@ -177,7 +171,14 @@ frontSrv.getProductsCategory  = async function(req, isCount) {
         if (req.query.offer != null && req.query.offer == "Con Oferta") {
                 query.match({ofertas: { $ne: [] } });
         }
-
+        if (req.query.min != null && utilsHelper.isFloat(req.query.min)) {
+                let min = parseFloat(req.query.min);
+                query.match({precioOrden: { $gte: min}});
+        }
+        if (req.query.max != null && utilsHelper.isFloat(req.query.max) ) {
+                let max = parseFloat(req.query.max);
+                query.match({precioOrden: { $lte: max}});
+        }
         
 
         if (req.query.pageSize != null){
@@ -204,10 +205,12 @@ frontSrv.getProductsCategory  = async function(req, isCount) {
         
         if(isCount){
                 query.count("count");
+        }else{
+
+                query.skip(page*limit);
+                query.limit(limit);
         }
       
-        query.skip(page*limit);
-        query.limit(limit);
         let prod = query.exec();
         return  prod;
 }

@@ -62,6 +62,8 @@ export class ClientProductComponent implements OnInit {
       let offer = this.dataProduct.ofertas;
       if (Array.isArray(offer) && offer[0] != null ) {
         this.dataProduct.ofertas = offer[0];
+      }else if(this.dataProduct.ofertas.descuento != null) {
+        
       }else{
         return;
       }

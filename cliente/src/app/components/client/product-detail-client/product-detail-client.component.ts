@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild,  ElementRef, Renderer2, Input} from '@angular/core';
 
 import { Properties } from '../../../dataModels/properties';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute,NavigationEnd } from '@angular/router';
 import { FrontServiceService } from '../../../services/front/front-service.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA, DialogPosition } from '@angular/material/dialog';
 import { fromEvent } from 'rxjs';
@@ -59,7 +59,7 @@ export class ProductDetailClientComponent implements OnInit {
   filter4: boolean = false;
   filter5: boolean = false;
   category: string;
-
+  navigationSubscription;
   @ViewChild("caracteristicas", { static: false }) caract: ElementRef;
 
   related =
@@ -75,21 +75,50 @@ export class ProductDetailClientComponent implements OnInit {
               public dialog: MatDialog,
               private userSrv: UserServiceService,
               private router: Router,
-              private renderer: Renderer2) { }
+              private renderer: Renderer2) { 
+
+              this.navigationSubscription = this.router.events.subscribe((e: any) => {
+                  //If it is a NavigationEnd event re-initalise the component
+                   if (e instanceof NavigationEnd) {
+                    this.userSrv.setPath(this.router.url);
+                    this.category = this.activeRoute.snapshot.queryParams.category;
+                    this.related.url= this.related.url + '?idProduct=' + this.activeRoute.snapshot.url[2].path  +'&category=' +  this.category ;
+                    let url = "front/" + this.activeRoute.snapshot.url[1].path + "/" + this.activeRoute.snapshot.url[2].path;
+                    let requestUrl = Properties.nevado_client_localhost  + Properties.nevado_client_base_context +  '/' + url;
+                    let me = this;
+                    debugger;
+                    me.count5Star = 0;
+                    me.count4Star= 0;
+                    me.count3Star = 0;
+                    me.count2Star = 0;
+                    me.count1Star = 0;
+                    me.countPrice = 0;
+                    me.reviews = [];
+                    me.offer=false;
+                    this.frontSrv.getProductData(requestUrl).subscribe(data => {
+                      me.product = data;
+                      console.log(me.product);
+                      me.setData(me.product, me);
+                    });
+                   }
+                 });
+              }
 
 
   ngOnInit() {
-    this.userSrv.setPath(this.router.url);
+    /*this.userSrv.setPath(this.router.url);
     this.category = this.activeRoute.snapshot.queryParams.category;
     this.related.url= this.related.url + '?idProduct=' + this.activeRoute.snapshot.url[2].path  +'&category=' +  this.category ;
     let url = "front/" + this.activeRoute.snapshot.url[1].path + "/" + this.activeRoute.snapshot.url[2].path;
     let requestUrl = Properties.nevado_client_localhost  + Properties.nevado_client_base_context +  '/' + url;
-    let me = this;
+    
     this.frontSrv.getProductData(requestUrl).subscribe(data => {
       me.product = data;
       console.log(me.product);
       me.setData(me.product, me);
-    });
+    });*/
+    let me = this;
+    
     // Checks if screen size is less than 1024 pixels
     const checkScreenSize = () => document.body.offsetWidth < 1024;
 
@@ -111,10 +140,21 @@ export class ProductDetailClientComponent implements OnInit {
     const checkScreenSize4 = () => document.body.offsetWidth < 1175;
     const screenSizeChanged5$ = fromEvent(window, 'resize').pipe(debounceTime(500)).pipe(map(checkScreenSize4));
     this.isSmallScreenObs4 = screenSizeChanged5$.pipe(startWith(checkScreenSize4())).subscribe(o => { me.isSmallScreen4 = o; });
+  
+  
   }
 
+  
   setData(productData, context) {
     context.related.category = productData.categoria;
+
+    const childElements = this.caract.nativeElement.childNodes;
+    if(childElements !=undefined){
+      for (let child of childElements) {
+        this.renderer.removeChild(this.caract.nativeElement, child);
+      }
+    }
+                  
     if (productData.caracteristicas != null && productData.caracteristicas != "") {
       let features = context.renderer.createElement('div');
       context.renderer.addClass(features, 'featuresClass');
@@ -196,7 +236,7 @@ export class ProductDetailClientComponent implements OnInit {
 
   openPhoto(){
     if (!this.isSmallScreen) {
-      this.openDialog(this.imagen, DetailPhotoProductComponent, "800px", "650px");
+      this.openDialog(this.imagen, DetailPhotoProductComponent, "800px", "600px");
     }
 
   }

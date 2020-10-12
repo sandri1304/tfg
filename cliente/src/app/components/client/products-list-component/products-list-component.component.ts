@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FrontServiceService } from '../../../services/front/front-service.service';
 import { Properties } from '../../../dataModels/properties';
@@ -16,7 +16,7 @@ import { UserServiceService} from '../../../services/user-service.service';
   templateUrl: './products-list-component.component.html',
   styleUrls: ['./products-list-component.component.css']
 })
-export class ProductsListComponentComponent implements OnInit {
+export class ProductsListComponentComponent implements OnInit, AfterViewInit {
 
   products;
   category: string;
@@ -32,7 +32,7 @@ export class ProductsListComponentComponent implements OnInit {
   resultsLength = 0;
   itemsPerPageLabel: string ="";
   observer = null;
-  pageSize=8;
+  pageSize=12;
   isSmallScreenObs;
   isSmallScreen;
   isSmallScreenObs2;
@@ -73,6 +73,9 @@ export class ProductsListComponentComponent implements OnInit {
               private userSrv: UserServiceService, 
               private router: Router) { }
 
+              ngAfterViewInit() {
+debugger;
+              }
   ngOnInit() {
     this.userSrv.setPath(this.router.url);
     let me  = this;
@@ -122,14 +125,14 @@ export class ProductsListComponentComponent implements OnInit {
 
   onChange(event) {
     debugger;
-    this.options = this.filters.filter(function(dato){
+    this.options = this.options.filter(function(dato){
       if (dato.campo == "sort") {
         return false;
       } else {
         return true;
       }
     });
-    this.options = this.filters.filter(function(dato){
+    this.options = this.options.filter(function(dato){
       if (dato.campo == "order") {
         return false;
       } else {
@@ -230,6 +233,16 @@ export class ProductsListComponentComponent implements OnInit {
   }
 
   changeBrand(event)  {
+    debugger;
+    this.options = this.options.filter(function(dato){
+      if (dato.campo == "pageIndex") {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    this.options.push({campo: 'pageIndex', value: 1});
+    this.paginator.pageIndex = 0;
     if (event.checked) {
       this.filters.push({campo: 'brand', value: event.source._elementRef.nativeElement.innerText});
     } else {
@@ -245,6 +258,15 @@ export class ProductsListComponentComponent implements OnInit {
   };
 
   changeAvailability(event) {
+    this.options = this.options.filter(function(dato){
+      if (dato.campo == "pageIndex") {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    this.options.push({campo: 'pageIndex', value: 1})
+    this.paginator.pageIndex = 0;
     if (event.checked) {
       this.filters.push({campo: 'stock', value: event.source._elementRef.nativeElement.innerText});
     } else {
@@ -260,6 +282,15 @@ export class ProductsListComponentComponent implements OnInit {
   };
 
   changeOffer(event){
+    this.options = this.options.filter(function(dato){
+      if (dato.campo == "pageIndex") {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    this.options.push({campo: 'pageIndex', value: 1})
+    this.paginator.pageIndex = 0;
     if (event.checked) {
       this.filters.push({campo: 'offer', value: event.source._elementRef.nativeElement.innerText});
     } else {
@@ -275,6 +306,15 @@ export class ProductsListComponentComponent implements OnInit {
   };
 
   changeFeatures(event) {
+    this.options = this.options.filter(function(dato){
+      if (dato.campo == "pageIndex") {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    this.options.push({campo: 'pageIndex', value: 1})
+    this.paginator.pageIndex = 0;
     this.filters = this.filters.filter(function(dato){
       if (dato.campo == "feature") {
         return false;
@@ -289,6 +329,16 @@ export class ProductsListComponentComponent implements OnInit {
   }
 
   changePrice() {
+    
+    this.options = this.options.filter(function(dato){
+      if (dato.campo == "pageIndex") {
+        return false;
+      } else {
+        return true;
+      }
+    });
+    this.options.push({campo: 'pageIndex', value: 1})
+    this.paginator.pageIndex = 0;
     this.filters = this.filters.filter(function(dato){
       if (dato.campo == "min") {
         return false;
@@ -312,14 +362,14 @@ export class ProductsListComponentComponent implements OnInit {
   paginar(event) {
     
     this.pageSize = event.pageSize;
-    this.options = this.filters.filter(function(dato){
+    this.options = this.options.filter(function(dato){
       if (dato.campo == "pageSize") {
         return false;
       } else {
         return true;
       }
     });
-    this.options = this.filters.filter(function(dato){
+    this.options = this.options.filter(function(dato){
       if (dato.campo == "pageIndex") {
         return false;
       } else {

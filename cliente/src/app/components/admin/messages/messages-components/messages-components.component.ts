@@ -180,7 +180,7 @@ export class MessagesComponentsComponent implements OnInit, AfterViewInit {
     var data = Object.assign({},num) ;
     const dialogRef = this.dialog.open(MessageInfoComponentComponent, {
       width: '800px',
-      height: '550px',
+      height: '500px',
       disableClose:true,
       position: position,
       data: data,

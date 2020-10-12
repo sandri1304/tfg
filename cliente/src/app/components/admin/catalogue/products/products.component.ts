@@ -161,7 +161,7 @@ export class ProductsComponent implements AfterViewInit {
     position.top="85px";
     const dialogRef = this.dialog.open(ProductsDetailComponent, {
       width: '800px',
-      height: '550px',
+      height: '500px',
       disableClose:true,
       position: position,
       data: product,

@@ -91,11 +91,11 @@ export class LoginComponent implements OnInit {
     this.loginForm.patchValue({email:"nevado.proyecto.19@gmail.com"});
     this.loginForm.patchValue({password:"neva.19"});
 
-    let emailinit = (new Date()).getTime() + "@gmail.com";
-    this.registerForm.patchValue({email:emailinit});
-    this.registerForm.patchValue({password:"12345"});
-    this.registerForm.patchValue({confirmationPassword: "12345"});
-    this.registerForm.patchValue({termsUse: true});
+    // let emailinit = (new Date()).getTime() + "@gmail.com";
+    // this.registerForm.patchValue({email:emailinit});
+    // this.registerForm.patchValue({password:"12345"});
+    // this.registerForm.patchValue({confirmationPassword: "12345"});
+    // this.registerForm.patchValue({termsUse: true});
 
     if (this.activeRoute.snapshot.queryParams.url != null && this.activeRoute.snapshot.queryParams.url != "") {
       this.urlRedirect = this.activeRoute.snapshot.queryParams.url;

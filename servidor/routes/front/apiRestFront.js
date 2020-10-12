@@ -96,9 +96,14 @@ routes.get('/similarProducts', async function(req, res, next){
 
 routes.get('/category/:nameCategory', async function(req, res, next){
     let data = await frontSrv.getProductsCategory(req, false);
-    let count = await frontSrv.getProductsCategory(req, true);
-    data.resultsLength =count[0].count;
-    res.send({data:data, count:count[0].count});
+    let count = await frontSrv.getProductsCategory(req, true);  
+    let c;
+    if(count.length == 0){
+        c= 0;
+    }else{
+        c = count[0].count;
+    }
+    res.send({data:data, count:c});
 });
 
 routes.get('/brands', async function(req, res, next){

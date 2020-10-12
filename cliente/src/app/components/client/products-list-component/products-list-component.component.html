@@ -144,9 +144,7 @@
           <app-client-product  [dataProduct]="p"></app-client-product>
         </mat-grid-tile>
       </mat-grid-list>
-      <div class="paginator">
-        <mat-paginator [length]="resultsLength" [pageSizeOptions]="[4, 8, 12]" [pageSize]="pageSize" (page)="paginar($event)" showFirstLastButtons></mat-paginator>
-      </div>
+  
     </div>
 
     <div *ngIf="isSmallScreen && isSmallScreen2 && !isSmallScreen3 ">
@@ -155,9 +153,7 @@
           <app-client-product  [dataProduct]="p"></app-client-product>
         </mat-grid-tile>
       </mat-grid-list>
-      <div class="paginator">
-        <mat-paginator [length]="resultsLength" [pageSizeOptions]="[4, 8, 12]" [pageSize]="pageSize" (page)="paginar($event)" showFirstLastButtons></mat-paginator>
-      </div>
+   
     </div>
 
     <div *ngIf="isSmallScreen && isSmallScreen2 && isSmallScreen3 ">
@@ -166,11 +162,11 @@
           <app-client-product  [dataProduct]="p"></app-client-product>
         </mat-grid-tile>
       </mat-grid-list>
-      <div class="paginator">
-        <mat-paginator [length]="resultsLength" [pageSizeOptions]="[4, 8, 12]" [pageSize]="pageSize" (page)="paginar($event)" showFirstLastButtons></mat-paginator>
-      </div>
+  
     </div>
-
+    <div class="paginator">
+      <mat-paginator [length]="resultsLength" [pageSizeOptions]="[4, 8, 12]" [pageSize]="pageSize" (page)="paginar($event)" showFirstLastButtons></mat-paginator>
+    </div>
   </div>
 
 

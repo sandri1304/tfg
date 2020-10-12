@@ -156,7 +156,7 @@ export class ClientComponentComponent implements OnInit, AfterViewInit {
     var data = Object.assign({},num) ;
     const dialogRef = this.dialog.open(ClientInfoComponentComponent, {
       width: '800px',
-      height: '550px',
+      height: '500px',
       disableClose:true,
       position: position,
       data: data,

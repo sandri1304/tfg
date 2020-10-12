@@ -78,8 +78,8 @@
 }
 
 .imageProduct{
-  min-width: 306px;
-  max-width: 306px;
-  max-height: 182px;
-  min-height: 182px;
+  min-width: 9.55em;
+  max-width: 9.55em;
+  max-height: 4em;
+  min-height: 4em;
 }
