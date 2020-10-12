@@ -55,6 +55,7 @@
 
 
   max-height: 182px;
+  min-height: 182px;
 }
 
 
@@ -80,4 +81,5 @@
   min-width: 306px;
   max-width: 306px;
   max-height: 182px;
+  min-height: 182px;
 }

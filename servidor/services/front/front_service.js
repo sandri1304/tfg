@@ -85,7 +85,7 @@ frontSrv.getProductsByCategory  = async function(query) {
 }
 
 
-frontSrv.getProductsCategory  = async function(req) {
+frontSrv.getProductsCategory  = async function(req, isCount) {
         let filters  = {};
         let params = {};
 
@@ -111,7 +111,18 @@ frontSrv.getProductsCategory  = async function(req) {
                 starRating:  {$divide:[ "$estrellas", {$cond: { if: { $gt: [ "$usuarios", 0 ] }, then: "$usuarios", else: 1 }}]},
                 stock: '$stock',
                 caracteristicas: '$caracteristicas',
-                otros: '%otros'
+                otros: '$otros',
+                ventas: '$ventas',
+                // descuento:  { $arrayElemAt: [ "$offer.descuento",0  ] },
+                precioOrden: {
+                        $cond: {
+                                 if: 
+                                        { $ne: ["$offer", [] ]},
+                                        then:  { $subtract: [ "$pvp", {$multiply:["$pvp",  {$divide:[ { $arrayElemAt: [ "$offer.descuento",0  ] },100]}]} ] },
+                                        else: "$pvp"
+                                 
+                        }
+                }
         }
        
         if (req.params.nameCategory != null)  {
@@ -191,9 +202,14 @@ frontSrv.getProductsCategory  = async function(req) {
                 query.sort(sortM);      
         }
         
+        if(isCount){
+                query.count("count");
+        }
+      
         query.skip(page*limit);
         query.limit(limit);
-        return  query.exec();
+        let prod = query.exec();
+        return  prod;
 }
 
 frontSrv.getBrands = async function(req) {

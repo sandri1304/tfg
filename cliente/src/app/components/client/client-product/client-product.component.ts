@@ -24,25 +24,11 @@ export class ClientProductComponent implements OnInit {
               private userSrv: UserServiceService) { }
 
 
+
+
   ngOnInit() {
-    if (this.dataProduct.ofertas != null) {
-      let today = new Date();
-      let dateInit = new Date(this.dataProduct.ofertas.fechaInicio);
-      let dateFin =  new Date(this.dataProduct.ofertas.fechaFin);
-      if  (dateInit <= today && dateFin >=  today){
-        this.oferta = true;
-        this.reducePVP = Math.round((this.dataProduct.pvp - (this.dataProduct.pvp * this.dataProduct.ofertas.descuento) / 100.00)*100)/100;
-        this.previousPVP = {
-          "color": "rgb(211, 212, 213)",
-          "text-decoration": "line-through",
-          "font-size": "60%",
-        };
-      };
-    } else {
-      this.previousPVP = {
-        //"margin-left": "2.75em"
-      }
-    }
+    debugger;
+    this.initOffer();
     if (this.dataProduct.envioGratuito) {
       this.freeSend = this.dataProduct.envioGratuito;
     }
@@ -67,6 +53,33 @@ export class ClientProductComponent implements OnInit {
 
     let url = "/home/cart/";
     this.router.navigate([url]);
+  }
+
+
+  initOffer(){
+    if (this.dataProduct.ofertas != null) {
+  
+      let offer = this.dataProduct.ofertas;
+      if (Array.isArray(offer) && offer[0] != null ) {
+        this.dataProduct.ofertas = offer[0];
+      }else{
+        return;
+      }
+
+      let today = new Date();
+      let dateInit = new Date(this.dataProduct.ofertas.fechaInicio);
+      let dateFin =  new Date(this.dataProduct.ofertas.fechaFin);
+      if  (dateInit <= today && dateFin >=  today){
+        this.oferta = true;
+        this.reducePVP = Math.round((this.dataProduct.pvp - (this.dataProduct.pvp * this.dataProduct.ofertas.descuento) / 100.00)*100)/100;
+        this.previousPVP = {
+          "color": "rgb(211, 212, 213)",
+          "text-decoration": "line-through",
+          "font-size": "60%",
+        };
+      };
+    }
+  
   }
 }
 

@@ -121,7 +121,7 @@ export class ProductsListComponentComponent implements OnInit {
   }
 
   onChange(event) {
-
+    debugger;
     this.options = this.filters.filter(function(dato){
       if (dato.campo == "sort") {
         return false;
@@ -138,12 +138,12 @@ export class ProductsListComponentComponent implements OnInit {
     });
     switch(event) {
       case "baratos": {
-        this.options.push({campo: 'sort', value: 'pvp'});
+        this.options.push({campo: 'sort', value: 'precioOrden'});
         this.options.push({campo: 'order', value: 'asc'});
         break;
       };
       case "caros": {
-        this.options.push({campo: 'sort', value: 'pvp'});
+        this.options.push({campo: 'sort', value: 'precioOrden'});
         this.options.push({campo: 'order', value: 'desc'});
         break;
       };
@@ -154,7 +154,7 @@ export class ProductsListComponentComponent implements OnInit {
       }
       case "opiniones": {
         this.options.push({campo: 'sort', value: 'starRating'});
-        this.options.push({campo: 'order', value: 'asc'});
+        this.options.push({campo: 'order', value: 'desc'});
         break;
       }
       case "none": {
@@ -214,14 +214,20 @@ export class ProductsListComponentComponent implements OnInit {
     let url = urlRequest + "?" + o;
     this.frontSrv.getProductData(url).subscribe(data => {
       debugger;
-       me.products = data;
+
+       me.setProduct(data, me);
        me.setTotalProducts(data, me);
     });
   }
 
   setTotalProducts(data, context) {
-    context.resultsLength  = data.length;
+    debugger;
+    context.resultsLength  = data.count;
   };
+
+  setProduct(data, context) {
+    context.products = data.data;
+  }
 
   changeBrand(event)  {
     if (event.checked) {
@@ -304,6 +310,8 @@ export class ProductsListComponentComponent implements OnInit {
 
 
   paginar(event) {
+    
+    this.pageSize = event.pageSize;
     this.options = this.filters.filter(function(dato){
       if (dato.campo == "pageSize") {
         return false;
